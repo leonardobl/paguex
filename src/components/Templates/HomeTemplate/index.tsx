@@ -3,6 +3,7 @@ import { LayoutTemplate } from "../LayoutTemplate";
 import * as S from "./styles";
 import { InputDate } from "../../Atoms/Inputs/InputDate";
 import { Button } from "../../Atoms/Button";
+import { BarChart } from "@mui/x-charts/BarChart";
 
 export const HomeTemplate = () => {
   return (
@@ -54,6 +55,20 @@ export const HomeTemplate = () => {
           </S.Card>
         </S.ListCards>
       </S.WrapperListCards>
+      <S.FlexWrapperGraficos>
+        <S.CardVistoria>
+          <S.TitleCard>Vistorias (%)</S.TitleCard>
+          <BarChart
+            xAxis={[{ scaleType: "band", data: ["group A", "group B"] }]}
+            series={[{ data: [3, 5] }, { data: [6, 3] }, { data: [5, 6] }]}
+            height={230}
+          />
+          <S.WrapperLegend>
+            <S.LegendCard bgColor="red">Loja Física</S.LegendCard>
+            <S.LegendCard bgColor="blue">Móvel</S.LegendCard>
+          </S.WrapperLegend>
+        </S.CardVistoria>
+      </S.FlexWrapperGraficos>
     </LayoutTemplate>
   );
 };
