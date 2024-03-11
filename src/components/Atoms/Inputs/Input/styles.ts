@@ -1,3 +1,4 @@
+import { darken } from "polished";
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
@@ -53,7 +54,7 @@ export const Input = styled.input<{ $typeInput?: string }>`
     font-size: 18px;
     font-family: "Noto Sans";
     font-weight: 400;
-    color: #8b9eb2;
+    color: ${darken(0.4, "#8b9eb2")};
     letter-spacing: 1;
 
     &[type="number"]::-webkit-inner-spin-button {

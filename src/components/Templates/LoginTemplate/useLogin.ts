@@ -56,6 +56,8 @@ export const useLogin = () => {
           usuarioCpfCnpj: decoded.sub,
           roles: decoded.perfis,
         });
+
+        navigate("/");
       })
       .catch(
         ({

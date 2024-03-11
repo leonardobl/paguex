@@ -4,7 +4,7 @@ export const MainContainer = styled.main`
   ${({ theme: { padding, screen } }) => css`
     padding: ${padding.mobile};
     width: 100%;
-    max-width: ${screen.xl};
+    max-width: ${screen["2xl"]};
     margin: 0 auto;
     flex: 1;
 
