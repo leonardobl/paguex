@@ -2,8 +2,6 @@ import React, { ComponentProps } from "react";
 import { Container } from "../../Atoms/Container";
 import * as S from "./styles";
 import { Outlet } from "react-router-dom";
-import { Bar } from "../../Atoms/Bar";
-import { Footer } from "../../Atoms/Footer";
 
 interface ILayoutProps extends ComponentProps<"div"> {
   children?: React.ReactNode;
@@ -17,23 +15,42 @@ export const LayoutTemplate = ({
 }: ILayoutProps) => {
   return (
     <S.Wrapper {...rest}>
-      <Bar>
-        <S.FlexWrapperBar>
-          <S.LogoBar src={`/assets/svg/logo.svg`} alt="logo da empresa" />
-        </S.FlexWrapperBar>
-      </Bar>
-      <Container data-padding-second={paddingSecond}>
-        {children}
-        <Outlet />
-      </Container>
-      <Footer>
-        <S.FlexWrapperFooter>
-          <S.LogoFooter
-            src={`/assets/svg/paguex-logo.svg`}
-            alt="logo da empresa"
+      <S.Bar>
+        <S.Headerbar>
+          <S.ImgProfile
+            src="/assets/svg/profile.svg"
+            alt="foto perfil ususario"
           />
-        </S.FlexWrapperFooter>
-      </Footer>
+
+          <p>
+            Olá, <span>Leonardo</span>
+          </p>
+
+          <button>
+            Logout
+            <img src="/assets/svg/logout.svg" alt="icone logout" />
+          </button>
+        </S.Headerbar>
+        <S.Nav>
+          <S.MenuList>
+            <S.MenuListItem>
+              <img src="/assets/svg/graficos.svg" alt="icone grafico" />
+            </S.MenuListItem>
+          </S.MenuList>
+        </S.Nav>
+      </S.Bar>
+      <S.Main>
+        <S.Header>
+          <S.WrapperHeaderContent>
+            <h2>Relatórios</h2>
+            <S.LogoBar src="/assets/svg/logo-paguex.svg" alt="Logo empresa" />
+          </S.WrapperHeaderContent>
+        </S.Header>
+        <Container data-padding-second={paddingSecond}>
+          {children}
+          <Outlet />
+        </Container>
+      </S.Main>
     </S.Wrapper>
   );
 };

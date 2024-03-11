@@ -1,5 +1,5 @@
 import React from "react";
-import { LayoutTemplateNoUser } from "../LayoutTemplateNoUser";
+import { LayoutNoUserTemplate } from "../LayoutNoUserTemplate";
 import * as S from "./styles";
 import { Title } from "../../Atoms/Title";
 import { Text } from "../../Atoms/Text";
@@ -8,7 +8,7 @@ import { Button } from "../../Atoms/Button";
 
 export const RecoveryPasswordTemplate = () => {
   return (
-    <LayoutTemplateNoUser>
+    <LayoutNoUserTemplate>
       <S.Container>
         <Title>Recuperação de senha</Title>
         <Text>
@@ -32,6 +32,6 @@ export const RecoveryPasswordTemplate = () => {
           </div>
         </S.Form>
       </S.Container>
-    </LayoutTemplateNoUser>
+    </LayoutNoUserTemplate>
   );
 };

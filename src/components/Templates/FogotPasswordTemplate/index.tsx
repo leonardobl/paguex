@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-import { LayoutTemplateNoUser } from "../LayoutTemplateNoUser";
+import { LayoutNoUserTemplate } from "../LayoutNoUserTemplate";
 import { Title } from "../../Atoms/Title";
 import { Text } from "../../Atoms/Text";
 import { Input } from "../../Atoms/Inputs/Input";
@@ -8,7 +8,7 @@ import { Button } from "../../Atoms/Button";
 
 export const FogotPasswordTemplate = () => {
   return (
-    <LayoutTemplateNoUser>
+    <LayoutNoUserTemplate>
       <S.Container>
         <Title>Esqueceu sua senha?</Title>
         <Text>
@@ -27,6 +27,6 @@ export const FogotPasswordTemplate = () => {
           </div>
         </S.Form>
       </S.Container>
-    </LayoutTemplateNoUser>
+    </LayoutNoUserTemplate>
   );
 };

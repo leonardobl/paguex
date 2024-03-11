@@ -4,13 +4,13 @@ import { Title } from "../../Atoms/Title";
 import { Input } from "../../Atoms/Inputs/Input";
 import { Button } from "../../Atoms/Button";
 import { useLogin } from "./useLogin";
-import { LayoutTemplateNoUser } from "../LayoutTemplateNoUser";
+import { LayoutNoUserTemplate } from "../LayoutNoUserTemplate";
 
 export const LoginTemplate = () => {
   const { navigate, handleSubmit, form, setForm, handleCpf } = useLogin();
 
   return (
-    <LayoutTemplateNoUser>
+    <LayoutNoUserTemplate>
       <S.Container>
         <Title>Login</Title>
         <S.Form onSubmit={handleSubmit}>
@@ -44,6 +44,6 @@ export const LoginTemplate = () => {
           </div>
         </S.Form>
       </S.Container>
-    </LayoutTemplateNoUser>
+    </LayoutNoUserTemplate>
   );
 };

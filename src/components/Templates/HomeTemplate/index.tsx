@@ -1,5 +1,6 @@
 import React from "react";
+import { LayoutTemplate } from "../LayoutTemplate";
 
 export const HomeTemplate = () => {
-  return <div>HomeTemplate</div>;
+  return <LayoutTemplate></LayoutTemplate>;
 };

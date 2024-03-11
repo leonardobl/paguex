@@ -3,17 +3,20 @@ import { Container } from "../../Atoms/Container";
 import * as S from "./styles";
 import { Outlet } from "react-router-dom";
 import { Bar } from "../../Atoms/Bar";
+import { useLayoutNoUser } from "./useLayoutNoUser";
 
 interface ILayoutProps extends ComponentProps<"div"> {
   children?: React.ReactNode;
   paddingSecond?: boolean;
 }
 
-export const LayoutTemplateNoUser = ({
+export const LayoutNoUserTemplate = ({
   children,
   paddingSecond,
   ...rest
 }: ILayoutProps) => {
+  const { navigate } = useLayoutNoUser();
+
   return (
     <S.Wrapper {...rest}>
       <Bar>
@@ -21,6 +24,7 @@ export const LayoutTemplateNoUser = ({
           <S.LogoBar
             src={`/assets/svg/paguex-logo.svg`}
             alt="logo da empresa"
+            onClick={() => navigate("/")}
           />
         </S.FlexWrapperBar>
       </Bar>
