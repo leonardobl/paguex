@@ -12,6 +12,7 @@ export const MainText = styled.div`
 
     .textStrong {
       font-weight: 700;
+      color: #0f2356;
     }
 
     @media (min-width: ${screen.sm}) {
