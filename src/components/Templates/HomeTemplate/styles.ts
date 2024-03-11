@@ -111,6 +111,7 @@ export const LegendCard = styled.p<{ bgColor: string }>`
 export const WrapperLegend = styled.legend`
   display: flex;
   gap: 0 1rem;
+  justify-content: end;
 `;
 
 export const TitleCard = styled.h2`
