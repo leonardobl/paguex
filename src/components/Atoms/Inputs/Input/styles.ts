@@ -49,12 +49,12 @@ export const Label = styled.label<{ $isRequired: boolean }>`
 export const Input = styled.input<{ $typeInput?: string }>`
   ${({ $typeInput }) => css`
     width: 100%;
-    height: 56px;
+    height: 3rem;
     border-radius: 0.25rem;
     border: 1px solid #bbc2d1;
     background-color: #fff;
     padding: ${$typeInput === "password" ? "0 40px 0 20px" : "0 20px"};
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Noto Sans";
     font-weight: 400;
     color: ${darken(0.4, "#8b9eb2")};

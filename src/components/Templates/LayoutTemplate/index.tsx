@@ -1,7 +1,7 @@
 import React, { ComponentProps } from "react";
-import { Container } from "../../Atoms/Container";
 import * as S from "./styles";
 import { Outlet } from "react-router-dom";
+import { useLayout } from "./useLayout";
 
 interface ILayoutProps extends ComponentProps<"div"> {
   children?: React.ReactNode;
@@ -13,6 +13,7 @@ export const LayoutTemplate = ({
   paddingSecond,
   ...rest
 }: ILayoutProps) => {
+  const { firstName, handleLogout, navigate } = useLayout();
   return (
     <S.Wrapper {...rest}>
       <S.Bar>
@@ -23,10 +24,10 @@ export const LayoutTemplate = ({
           />
 
           <p>
-            Olá, <span>Leonardo</span>
+            Olá, <span>{firstName}</span>
           </p>
 
-          <button>
+          <button onClick={handleLogout}>
             Logout
             <img src="/assets/svg/logout.svg" alt="icone logout" />
           </button>
@@ -34,7 +35,11 @@ export const LayoutTemplate = ({
         <S.Nav>
           <S.MenuList>
             <S.MenuListItem>
-              <img src="/assets/svg/graficos.svg" alt="icone grafico" />
+              <img
+                src="/assets/svg/graficos.svg"
+                alt="icone grafico"
+                onClick={() => navigate("/")}
+              />
             </S.MenuListItem>
           </S.MenuList>
         </S.Nav>
@@ -46,10 +51,10 @@ export const LayoutTemplate = ({
             <S.LogoBar src="/assets/svg/logo-paguex.svg" alt="Logo empresa" />
           </S.WrapperHeaderContent>
         </S.Header>
-        <Container data-padding-second={paddingSecond}>
+        <S.Container>
           {children}
           <Outlet />
-        </Container>
+        </S.Container>
       </S.Main>
     </S.Wrapper>
   );

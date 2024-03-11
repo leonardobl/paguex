@@ -48,15 +48,15 @@ export const Container = styled.div<{ $showIcon?: boolean }>`
     .react-datepicker__input-container {
       input {
         width: 100%;
-        height: 56px;
-        background-color: #fff;
-        border-radius: 10px;
-        border: 1px solid #12d1a7;
+        height: 3rem;
+
+        border-radius: 0.25rem;
+        border: 1px solid #bbc2d1;
+        background: #fff;
+
         padding: 0 30px;
         color: #111;
-        font-family: "Mulish";
         font-size: 16px;
-        border: 1px solid #12d1a7;
         font-weight: 600;
 
         &:focus {
@@ -94,7 +94,7 @@ export const Label = styled.label`
   display: flex;
 
   padding: 2px 5px;
-  font-family: "Mulish";
+  font-family: "Open Sans";
   color: rgba(0, 0, 0, 0.56);
 
   font-size: 12px;

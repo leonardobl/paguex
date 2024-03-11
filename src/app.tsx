@@ -1,5 +1,5 @@
 import React from "react";
-
+import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "styled-components";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";

@@ -16,8 +16,7 @@ export const useLogin = () => {
 
   const [token, setToken] = useSessionStorage("@token");
 
-  const [agendamentoSession, setAgendamentoSession] =
-    useSessionStorage("agendamentoSession");
+  const [sessionUsuario, setSessionUsuario] = useSessionStorage("Usuario");
 
   function handleCpf(e: string) {
     let newValue = "";
@@ -50,14 +49,13 @@ export const useLogin = () => {
       .then((token) => {
         const decoded = jwtDecode<IDecodedToken>(token);
 
-        setAgendamentoSession({
-          ...agendamentoSession,
-          uuidUsuario: decoded.uuid,
-          usuarioCpfCnpj: decoded.sub,
-          roles: decoded.perfis,
+        setSessionUsuario({
+          ...decoded,
         });
-
-        navigate("/");
+        toast.success("Login efetuado com sucesso!", { autoClose: 1500 });
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
       })
       .catch(
         ({

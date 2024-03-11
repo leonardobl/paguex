@@ -4,6 +4,8 @@ export const Wrapper = styled.div`
   width: 100%;
   min-height: 100dvh;
   display: flex;
+  /* justify-content: stretch;
+  align-items: stretch; */
 `;
 
 export const LogoBar = styled.img`
@@ -45,6 +47,7 @@ export const Header = styled.header`
   width: 100%;
   height: 84px;
   width: 100%;
+  margin-bottom: 1.25rem;
 
   border-bottom: 1px solid #bbc2d1;
   padding: 0 34px;
@@ -54,7 +57,7 @@ export const Bar = styled.div`
   width: 126px;
   min-height: 100dvh;
   background: #0f2356;
-  padding: 1rem 0;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,11 +113,18 @@ export const WrapperHeaderContent = styled.div`
 `;
 
 export const Main = styled.main`
-  flex: 1;
+  width: 100%;
 `;
 
 export const Nav = styled.nav``;
 export const MenuList = styled.ul``;
 export const MenuListItem = styled.li`
   cursor: pointer;
+`;
+
+export const Container = styled.div`
+  ${({ theme: { screen } }) => css`
+    padding: 0 32px;
+    max-width: ${screen["2xl"]};
+  `}
 `;
