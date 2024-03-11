@@ -1,4 +1,4 @@
-export default function objectToParams(params: any): string {
+export default function objectToParams<T>(params: T): string {
   const result = params
     ? Object.entries(params)
         .map((e) => e.join("="))
