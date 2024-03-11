@@ -2,23 +2,26 @@ import { darken } from "polished";
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  position: relative;
+  ${({ theme: { colors } }) => css`
+    position: relative;
 
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-    -webkit-text-fill-color: #111 !important;
-  }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+      -webkit-text-fill-color: #111 !important;
+    }
 
-  svg {
-    cursor: pointer;
-    position: absolute;
-    right: 14px;
-    top: 19px;
-    color: #0f2356;
-  }
+    > svg {
+      cursor: pointer;
+      position: absolute;
+      right: 14px;
+      top: 19px;
+      filter: brightness(0) saturate(100%) invert(9%) sepia(65%) saturate(3407%)
+        hue-rotate(217deg) brightness(86%) contrast(92%);
+    }
+  `}
 `;
 
 export const Label = styled.label<{ $isRequired: boolean }>`

@@ -10,6 +10,7 @@ import { Login } from "./components/Pages/Login";
 import { ProtectedRoute } from "./components/Atoms/ProtectedRoute";
 import { FogotPassword } from "./components/Pages/FogotPassword";
 import { Home } from "./components/Pages/Home";
+import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
 
 export function App() {
   return (
@@ -29,6 +30,7 @@ export function App() {
                 }
               />
               <Route path="/login" element={<Login />} />
+              <Route path="/recuperar-senha" element={<RecoveryPassword />} />
               <Route path="/esqueci-senha" element={<FogotPassword />} />
             </Routes>
           </BrowserRouter>
