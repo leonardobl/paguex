@@ -15,11 +15,9 @@ export const LogoBar = styled.img`
 export const Header = styled.header`
   width: 100%;
   height: 84px;
-  width: 100%;
   margin-bottom: 1.25rem;
 
   border-bottom: 1px solid #bbc2d1;
-  padding: 0 34px;
 `;
 
 export const Bar = styled.div`
@@ -77,6 +75,7 @@ export const WrapperHeaderContent = styled.div`
     justify-content: space-between;
     height: 100%;
     width: 100%;
+    padding: 0 34px;
     max-width: calc(${screen["2xl"]} - 126px);
   `}
 `;
@@ -93,8 +92,12 @@ export const MenuListItem = styled.li`
 
 export const Container = styled.div`
   ${({ theme: { screen } }) => css`
-    padding: 0 32px;
+    padding: 0 20px;
     width: 100%;
     max-width: calc(${screen["2xl"]} - 126px);
+
+    @media (min-width: ${screen["2xl"]}) {
+      padding: 0 32px;
+    }
   `}
 `;

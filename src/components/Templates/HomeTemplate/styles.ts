@@ -1,3 +1,4 @@
+import { darken } from "polished";
 import styled, { css } from "styled-components";
 
 export const FormDateFilter = styled.form`
@@ -27,6 +28,7 @@ export const WrapperListCards = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3.38rem;
+  gap: 0 1rem;
 `;
 
 export const ListCards = styled.div`
@@ -76,7 +78,8 @@ export const Card = styled.div`
 
 export const CardVistoria = styled.div`
   padding: 1rem;
-  width: 31.9375rem;
+  max-width: 31.9375rem;
+  width: 100%;
   height: 18.5rem;
   border-radius: 0.25rem;
   border: 1px solid #bbc2d1;
@@ -85,7 +88,8 @@ export const CardVistoria = styled.div`
 `;
 export const CardProducao = styled.div`
   padding: 1rem;
-  width: 47.125rem;
+  width: 100%;
+  max-width: 47.125rem;
   height: 18.5625rem;
   border-radius: 0.25rem;
   border: 1px solid var(--INPUT, #bbc2d1);
@@ -97,6 +101,7 @@ export const FlexWrapperGraficos = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
+  gap: 0 1rem;
 `;
 
 export const TitleCard = styled.h2`
@@ -107,4 +112,65 @@ export const TitleCard = styled.h2`
   font-weight: 700;
   line-height: 1.25rem; /* 125% */
   text-transform: uppercase;
+`;
+
+export const ExportButton = styled.button`
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0 0.76rem;
+  margin-bottom: 2rem;
+
+  color: #0f2356;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 125% */
+`;
+
+export const Table = styled.div`
+  margin-bottom: 2rem;
+
+  > div {
+    border-radius: 0.25rem;
+    background: #ecf0f8;
+    box-shadow: 0px 4px 9px 0px rgba(15, 35, 86, 0.2);
+    width: 100%;
+    height: 3.5rem;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+    place-items: center;
+  }
+
+  > div + div {
+    margin-top: 1.25rem;
+  }
+`;
+
+export const TableHead = styled.div`
+  h4 {
+    color: #0f2356;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: 0.03rem;
+  }
+`;
+
+export const TableRow = styled.div`
+  &:hover {
+    background: ${darken(0.03, "#ecf0f8")};
+  }
+
+  p {
+    color: #8b9eb2;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: 0.03rem;
+  }
 `;

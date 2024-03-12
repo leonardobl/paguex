@@ -75,8 +75,8 @@ export const HomeTemplate = () => {
               },
             }}
             series={[
-              { data: [3, 4, 1, 6, 5], label: "Series A1", color: "red" },
-              { data: [4, 3, 1, 5, 8], label: "Series A2", color: "blue" },
+              { data: [3, 4, 1, 6, 5], label: "Series A1", color: "#2556CC" },
+              { data: [4, 3, 1, 5, 8], label: "Series A2", color: "#54ACF2" },
             ]}
             skipAnimation={true}
           />
@@ -105,6 +105,61 @@ export const HomeTemplate = () => {
           />
         </S.CardProducao>
       </S.FlexWrapperGraficos>
+      <S.ExportButton>
+        <img src={"/assets/svg/export-icon.svg"} alt="icone exportacao" />{" "}
+        Exportar
+      </S.ExportButton>
+
+      <S.Table>
+        <S.TableHead>
+          <h4>Empresa</h4>
+          <h4>Loja</h4>
+          <h4>Qtd. Loja</h4>
+          <h4>%Loja</h4>
+          <h4>Qtd. Móvel</h4>
+          <h4>%Móvel</h4>
+          <h4>Revistorias </h4>
+          <h4>Móvel Obrigatório</h4>
+          <h4>Móvel Não Obrigatório</h4>
+          <h4>Total</h4>
+        </S.TableHead>
+        <S.TableRow>
+          <p>StarCheck</p>
+          <p>São Luís</p>
+          <p>40</p>
+          <p>40%</p>
+          <p>20</p>
+          <p>20%</p>
+          <p>40</p>
+          <p>10</p>
+          <p>10</p>
+          <p>Total</p>
+        </S.TableRow>
+        <S.TableRow>
+          <p>Log Vist.</p>
+          <p>São Luís</p>
+          <p>40</p>
+          <p>40%</p>
+          <p>20</p>
+          <p>20%</p>
+          <p>40</p>
+          <p>10</p>
+          <p>10</p>
+          <p>Total</p>
+        </S.TableRow>
+        <S.TableRow>
+          <p>Tokyo Vist.</p>
+          <p>São Luís</p>
+          <p>40</p>
+          <p>40%</p>
+          <p>20</p>
+          <p>20%</p>
+          <p>40</p>
+          <p>10</p>
+          <p>10</p>
+          <p>Total</p>
+        </S.TableRow>
+      </S.Table>
     </LayoutTemplate>
   );
 };
