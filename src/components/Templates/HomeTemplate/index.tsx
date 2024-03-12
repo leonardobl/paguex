@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { LayoutTemplate } from "../LayoutTemplate";
 import * as S from "./styles";
 import { InputDate } from "../../Atoms/Inputs/InputDate";
 import { Button } from "../../Atoms/Button";
 import { BarChart } from "@mui/x-charts/BarChart";
+import { LineChart } from "@mui/x-charts";
 
 export const HomeTemplate = () => {
-  const [seriesNb, setSeriesNb] = useState(2);
   return (
     <LayoutTemplate>
       <S.FormDateFilter>
@@ -81,6 +81,29 @@ export const HomeTemplate = () => {
             skipAnimation={true}
           />
         </S.CardVistoria>
+        <S.CardProducao>
+          <S.TitleCard>PRODUÇÃO DIÁRIA TOTAL DE VISTORIAS</S.TitleCard>
+          <LineChart
+            series={[
+              { curve: "linear", data: [0, 5, 2, 6, 3, 9.3], label: "a" },
+              { curve: "linear", data: [6, 3, 7, 9.5, 4, 2], label: "b" },
+              { curve: "linear", data: [2, 3, 7, 6, 1, 2], label: "c" },
+            ]}
+            slotProps={{
+              legend: {
+                position: {
+                  vertical: "bottom",
+                  horizontal: "right",
+                },
+                labelStyle: { fontSize: 12 },
+                itemMarkWidth: 10,
+                itemMarkHeight: 10,
+                markGap: 5,
+                itemGap: 10,
+              },
+            }}
+          />
+        </S.CardProducao>
       </S.FlexWrapperGraficos>
     </LayoutTemplate>
   );
