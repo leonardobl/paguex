@@ -60,13 +60,13 @@ export const HomeTemplate = () => {
         <S.CardVistoria>
           <S.TitleCard>Vistorias (%)</S.TitleCard>
           <BarChart
-            height={240}
             slotProps={{
               legend: {
                 position: {
                   vertical: "bottom",
                   horizontal: "right",
                 },
+                // padding: 0,
                 labelStyle: { fontSize: 12 },
                 itemMarkWidth: 10,
                 itemMarkHeight: 10,
