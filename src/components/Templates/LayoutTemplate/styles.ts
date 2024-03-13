@@ -21,10 +21,12 @@ export const Header = styled.header`
 `;
 
 export const Bar = styled.div`
-  width: 126px;
+  min-width: 120px;
+  max-width: 120px;
+  width: 100%;
   min-height: 100dvh;
   background: #0f2356;
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,6 +35,7 @@ export const Bar = styled.div`
 
 export const Headerbar = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   height: max-content;
   align-items: center;
@@ -75,7 +78,7 @@ export const WrapperHeaderContent = styled.div`
     justify-content: space-between;
     height: 100%;
     width: 100%;
-    padding: 0 34px;
+    padding: 0 16px;
     max-width: calc(${screen["2xl"]} - 126px);
   `}
 `;
@@ -92,12 +95,12 @@ export const MenuListItem = styled.li`
 
 export const Container = styled.div`
   ${({ theme: { screen } }) => css`
-    padding: 0 20px;
+    padding: 0 16px;
     width: 100%;
     max-width: calc(${screen["2xl"]} - 126px);
 
     @media (min-width: ${screen["2xl"]}) {
-      padding: 0 32px;
+      padding: 0 20px;
     }
   `}
 `;

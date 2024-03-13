@@ -25,15 +25,27 @@ export const Label = styled.label`
 `;
 
 export const WrapperListCards = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3.38rem;
-  gap: 0 1rem;
+  ${({ theme: { screen } }) => css`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.38rem;
+    gap: 0 0.625rem;
+
+    @media (min-width: ${screen["2xl"]}) {
+      gap: 0 1rem;
+    }
+  `}
 `;
 
 export const ListCards = styled.div`
-  display: flex;
-  gap: 1rem;
+  ${({ theme: { screen } }) => css`
+    display: flex;
+    gap: 0.625rem;
+
+    @media (min-width: ${screen["2xl"]}) {
+      gap: 1rem;
+    }
+  `}
 `;
 
 export const Card = styled.div`
