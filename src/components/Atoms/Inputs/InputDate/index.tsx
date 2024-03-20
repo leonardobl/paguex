@@ -35,6 +35,7 @@ export const InputDate = (props: InputDateProps) => {
         renderCustomHeader={({ monthDate, decreaseMonth, increaseMonth }) => (
           <div className="react-datepicker__navigation_wrapper">
             <button
+              type="button"
               aria-label="Previous Month"
               className={
                 "react-datepicker__navigation react-datepicker__navigation--previous"
@@ -56,6 +57,7 @@ export const InputDate = (props: InputDateProps) => {
               })}
             </span>
             <button
+              type="button"
               aria-label="Next Month"
               className={
                 "react-datepicker__navigation react-datepicker__navigation--next"

@@ -5,18 +5,34 @@ import { InputDate } from "../../Atoms/Inputs/InputDate";
 import { Button } from "../../Atoms/Button";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts";
+import { useHome } from "./useHome";
+import { maskMoney } from "../../../utils/masks";
 
 export const HomeTemplate = () => {
+  const { filterDate, setFilterDate, handleFilter, dataGeral } = useHome();
+
   return (
     <LayoutTemplate>
-      <S.FormDateFilter>
+      <S.FormDateFilter onSubmit={handleFilter}>
         <div>
           <S.Label>Data Inicial</S.Label>
-          <InputDate placeholderText="___/___/___" onChange={() => ""} />
+          <InputDate
+            required
+            selected={filterDate?.dataIncio}
+            placeholderText="___/___/___"
+            onChange={(e) =>
+              setFilterDate((prev) => ({ ...prev, dataIncio: e }))
+            }
+          />
         </div>
         <div>
           <S.Label>Data Final</S.Label>
-          <InputDate placeholderText="___/___/___" onChange={() => ""} />
+          <InputDate
+            required
+            selected={filterDate?.dataFim}
+            placeholderText="___/___/___"
+            onChange={(e) => setFilterDate((prev) => ({ ...prev, dataFim: e }))}
+          />
         </div>
         <div>
           <Button>Filtrar</Button>
@@ -26,33 +42,35 @@ export const HomeTemplate = () => {
         <S.ListCards>
           <S.Card>
             <p>Ticket Médio</p>
-            <span>R$127,65</span>
+            <span>
+              {maskMoney(dataGeral?.total / dataGeral?.quantidade) || "R$ 0,00"}
+            </span>
           </S.Card>
           <S.Card>
             <p>Revistorias</p>
-            <span>12</span>
+            <span>{dataGeral?.quantidadeRevistoria | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Loja</p>
-            <span>1101</span>
+            <span>{dataGeral?.totalLoja | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Móvel</p>
-            <span>248</span>
+            <span>{dataGeral?.totalMovel | 0}</span>
           </S.Card>
           <S.Card className="active">
             <p>Total Vistorias</p>
-            <span>1349</span>
+            <span>{(dataGeral?.totalLoja + dataGeral?.totalMovel) | 0}</span>
           </S.Card>
         </S.ListCards>
         <S.ListCards>
           <S.Card>
             <p>Móvel Obrigatório</p>
-            <span>183</span>
+            <span>{dataGeral?.quantidadeMovelObrigatorio | 0}</span>
           </S.Card>
           <S.Card>
             <p>Móvel Não Obri.</p>
-            <span>65</span>
+            <span>{dataGeral?.quantidadeMovelNaoObrigatorio | 0}</span>
           </S.Card>
         </S.ListCards>
       </S.WrapperListCards>

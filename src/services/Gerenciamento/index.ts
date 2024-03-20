@@ -8,7 +8,7 @@ import {
 
 const basePath = "/gerenciamento";
 
-interface IGerenciamentoProps {
+export interface IGerenciamentoProps {
   dataInicio: string;
   dataFim: string;
 }
