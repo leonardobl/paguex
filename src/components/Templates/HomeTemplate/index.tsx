@@ -7,9 +7,29 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts";
 import { useHome } from "./useHome";
 import { maskMoney } from "../../../utils/masks";
-
+import dayjs from "dayjs";
+const xAxisData = [
+  new Date("2023-12-04"),
+  new Date("2023-12-05"),
+  new Date("2023-12-06"),
+  new Date("2023-12-07"),
+  new Date("2023-12-08"),
+  new Date("2023-12-09"),
+  new Date("2023-12-10"),
+];
+const seriesData = [
+  [43, 38, 36, 30, 37, 44],
+  [31, 28, 27, 27, 33, 40, 35],
+];
 export const HomeTemplate = () => {
-  const { filterDate, setFilterDate, handleFilter, dataGeral } = useHome();
+  const {
+    filterDate,
+    setFilterDate,
+    handleFilter,
+    dataGeral,
+    dataLojas,
+    producao,
+  } = useHome();
 
   return (
     <LayoutTemplate>
@@ -43,34 +63,37 @@ export const HomeTemplate = () => {
           <S.Card>
             <p>Ticket Médio</p>
             <span>
-              {maskMoney(dataGeral?.total / dataGeral?.quantidade) || "R$ 0,00"}
+              {maskMoney(dataGeral[0]?.total / dataGeral[0]?.quantidade) ||
+                "R$ 0,00"}
             </span>
           </S.Card>
           <S.Card>
             <p>Revistorias</p>
-            <span>{dataGeral?.quantidadeRevistoria | 0}</span>
+            <span>{dataGeral[0]?.quantidadeRevistoria | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Loja</p>
-            <span>{dataGeral?.totalLoja | 0}</span>
+            <span>{dataGeral[0]?.totalLoja | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Móvel</p>
-            <span>{dataGeral?.totalMovel | 0}</span>
+            <span>{dataGeral[0]?.totalMovel | 0}</span>
           </S.Card>
           <S.Card className="active">
             <p>Total Vistorias</p>
-            <span>{(dataGeral?.totalLoja + dataGeral?.totalMovel) | 0}</span>
+            <span>
+              {(dataGeral[0]?.totalLoja + dataGeral[0]?.totalMovel) | 0}
+            </span>
           </S.Card>
         </S.ListCards>
         <S.ListCards>
           <S.Card>
             <p>Móvel Obrigatório</p>
-            <span>{dataGeral?.quantidadeMovelObrigatorio | 0}</span>
+            <span>{dataGeral[0]?.quantidadeMovelObrigatorio | 0}</span>
           </S.Card>
           <S.Card>
             <p>Móvel Não Obri.</p>
-            <span>{dataGeral?.quantidadeMovelNaoObrigatorio | 0}</span>
+            <span>{dataGeral[0]?.quantidadeMovelNaoObrigatorio | 0}</span>
           </S.Card>
         </S.ListCards>
       </S.WrapperListCards>
@@ -102,11 +125,28 @@ export const HomeTemplate = () => {
         <S.CardProducao>
           <S.TitleCard>PRODUÇÃO DIÁRIA TOTAL DE VISTORIAS</S.TitleCard>
           <LineChart
-            series={[
-              { curve: "linear", data: [0, 5, 2, 6, 3, 9.3], label: "a" },
-              { curve: "linear", data: [6, 3, 7, 9.5, 4, 2], label: "b" },
-              { curve: "linear", data: [2, 3, 7, 6, 1, 2], label: "c" },
+            xAxis={[
+              {
+                data: producao?.datas,
+                tickInterval: producao?.datas,
+                scaleType: "time",
+                valueFormatter: (date) => dayjs(date)?.format("DD/MM/YYYY"),
+              },
             ]}
+            // xAxis={producao?.datas?.map((item) => ({
+            //   data: item,
+            //   tickInterval: item,
+            //   scaleType: "time",
+            //   valueFormatter: (date) => dayjs(date).format("DD/MM/YYYY"),
+            // }))}
+            series={producao?.vistorias?.map((data) => ({
+              // label: "Teste " + idx,
+              data: data,
+            }))}
+            // series={producao?.vistorias?.map((item, idx) => ({
+            //   label: "Teste " + idx,
+            //   data: item,
+            // }))}
             slotProps={{
               legend: {
                 position: {
