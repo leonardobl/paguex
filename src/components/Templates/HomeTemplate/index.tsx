@@ -8,19 +8,151 @@ import { LineChart } from "@mui/x-charts";
 import { useHome } from "./useHome";
 import { maskMoney } from "../../../utils/masks";
 import dayjs from "dayjs";
-const xAxisData = [
-  new Date("2023-12-04"),
-  new Date("2023-12-05"),
-  new Date("2023-12-06"),
-  new Date("2023-12-07"),
-  new Date("2023-12-08"),
-  new Date("2023-12-09"),
-  new Date("2023-12-10"),
+
+const data = [
+  [
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 0,
+      total: 0,
+      quantidade: 9,
+      quantidadeLoja: 0,
+      totalMovel: 0,
+      quantidadeMovel: 9,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 0,
+      quantidadeMovelNaoObrigatorio: 0,
+      nome: "Delivery Balsas",
+      uf: "MA",
+      cidade: "Balsas",
+    },
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 0,
+      total: 0,
+      quantidade: 4,
+      quantidadeLoja: 0,
+      totalMovel: 0,
+      quantidadeMovel: 4,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 0,
+      quantidadeMovelNaoObrigatorio: 0,
+      nome: "Delivery Timon",
+      uf: "MA",
+      cidade: "Timon",
+    },
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 153,
+      total: 153,
+      quantidade: 64,
+      quantidadeLoja: 58,
+      totalMovel: 0,
+      quantidadeMovel: 6,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 153,
+      quantidadeMovelNaoObrigatorio: 58,
+      nome: "Starcheck Filial Inter",
+      uf: "MA",
+      cidade: "Imperatriz",
+    },
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 31305,
+      total: 31305,
+      quantidade: 68,
+      quantidadeLoja: 68,
+      totalMovel: 0,
+      quantidadeMovel: 0,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 31305,
+      quantidadeMovelNaoObrigatorio: 68,
+      nome: "Starcheck Matriz Inter",
+      uf: "MA",
+      cidade: "São Luís",
+    },
+  ],
+
+  [
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 0,
+      total: 0,
+      quantidade: 9,
+      quantidadeLoja: 0,
+      totalMovel: 0,
+      quantidadeMovel: 9,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 0,
+      quantidadeMovelNaoObrigatorio: 0,
+      nome: "Delivery Balsas",
+      uf: "MA",
+      cidade: "Balsas",
+    },
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 0,
+      total: 0,
+      quantidade: 4,
+      quantidadeLoja: 0,
+      totalMovel: 0,
+      quantidadeMovel: 4,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 0,
+      quantidadeMovelNaoObrigatorio: 0,
+      nome: "Delivery Timon",
+      uf: "MA",
+      cidade: "Timon",
+    },
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 153,
+      total: 153,
+      quantidade: 64,
+      quantidadeLoja: 58,
+      totalMovel: 0,
+      quantidadeMovel: 6,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 153,
+      quantidadeMovelNaoObrigatorio: 58,
+      nome: "Starcheck Filial Inter",
+      uf: "MA",
+      cidade: "Imperatriz",
+    },
+    {
+      quantidadeRevistoria: 0,
+      totalMovelObrigatorio: 0,
+      totalLoja: 31305,
+      total: 31305,
+      quantidade: 68,
+      quantidadeLoja: 68,
+      totalMovel: 0,
+      quantidadeMovel: 0,
+      totalRevistoria: 0,
+      quantidadeMovelObrigatorio: 0,
+      totalMovelNaoObrigatorio: 31305,
+      quantidadeMovelNaoObrigatorio: 68,
+      nome: "Starcheck Matriz Inter",
+      uf: "MA",
+      cidade: "São Luís",
+    },
+  ],
 ];
-const seriesData = [
-  [43, 38, 36, 30, 37, 44],
-  [31, 28, 27, 27, 33, 40, 35],
-];
+
 export const HomeTemplate = () => {
   const {
     filterDate,
@@ -181,42 +313,22 @@ export const HomeTemplate = () => {
           <h4>Móvel Não Obrigatório</h4>
           <h4>Total</h4>
         </S.TableHead>
-        <S.TableRow>
-          <p>StarCheck</p>
-          <p>São Luís</p>
-          <p>40</p>
-          <p>40%</p>
-          <p>20</p>
-          <p>20%</p>
-          <p>40</p>
-          <p>10</p>
-          <p>10</p>
-          <p>Total</p>
-        </S.TableRow>
-        <S.TableRow>
-          <p>Log Vist.</p>
-          <p>São Luís</p>
-          <p>40</p>
-          <p>40%</p>
-          <p>20</p>
-          <p>20%</p>
-          <p>40</p>
-          <p>10</p>
-          <p>10</p>
-          <p>Total</p>
-        </S.TableRow>
-        <S.TableRow>
-          <p>Tokyo Vist.</p>
-          <p>São Luís</p>
-          <p>40</p>
-          <p>40%</p>
-          <p>20</p>
-          <p>20%</p>
-          <p>40</p>
-          <p>10</p>
-          <p>10</p>
-          <p>Total</p>
-        </S.TableRow>
+        {data.map((item) =>
+          item.map((_) => (
+            <S.TableRow key={Math.random()}>
+              <p>{_.nome || "---"}</p>
+              <p>{_.cidade || "---"}</p>
+              <p>{_.quantidadeLoja || 0}</p>
+              <p>40%</p>
+              <p>20</p>
+              <p>20%</p>
+              <p>40</p>
+              <p>10</p>
+              <p>10</p>
+              <p>Total</p>
+            </S.TableRow>
+          ))
+        )}
       </S.Table>
     </LayoutTemplate>
   );

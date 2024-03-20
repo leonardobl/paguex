@@ -151,9 +151,9 @@ export const Table = styled.div`
     width: 100%;
     height: 3.5rem;
     display: grid;
-    padding: 1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
-    place-items: center;
+    padding: 0 8px;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+    align-items: center;
   }
 
   > div + div {
