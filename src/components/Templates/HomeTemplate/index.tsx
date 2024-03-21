@@ -205,7 +205,7 @@ export const HomeTemplate = () => {
           </S.Card>
           <S.Card>
             <p>Total Loja</p>
-            <span>{dataGeral[0]?.totalLoja | 0}</span>
+            <span>{dataGeral[0]?.quantidadeLoja | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Móvel</p>
@@ -265,20 +265,11 @@ export const HomeTemplate = () => {
                 valueFormatter: (date) => dayjs(date)?.format("DD/MM/YYYY"),
               },
             ]}
-            // xAxis={producao?.datas?.map((item) => ({
-            //   data: item,
-            //   tickInterval: item,
-            //   scaleType: "time",
-            //   valueFormatter: (date) => dayjs(date).format("DD/MM/YYYY"),
-            // }))}
             series={producao?.vistorias?.map((data) => ({
               // label: "Teste " + idx,
               data: data,
+              label: "Tokyo-Vistorias",
             }))}
-            // series={producao?.vistorias?.map((item, idx) => ({
-            //   label: "Teste " + idx,
-            //   data: item,
-            // }))}
             slotProps={{
               legend: {
                 position: {
@@ -319,8 +310,8 @@ export const HomeTemplate = () => {
               <p>{_.nome || "---"}</p>
               <p>{_.cidade || "---"}</p>
               <p>{_.quantidadeLoja || 0}</p>
-              <p>40%</p>
-              <p>20</p>
+              <p>{_.quantidadeLoja.toFixed(2)}%</p>
+              <p>{_.quantidadeMovel || 0}</p>
               <p>20%</p>
               <p>40</p>
               <p>10</p>
