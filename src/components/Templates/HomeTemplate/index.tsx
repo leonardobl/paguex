@@ -9,159 +9,8 @@ import { useHome } from "./useHome";
 import { maskMoney } from "../../../utils/masks";
 import dayjs from "dayjs";
 
-const data = [
-  [
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 0,
-      total: 0,
-      quantidade: 9,
-      quantidadeLoja: 0,
-      totalMovel: 0,
-      quantidadeMovel: 9,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 0,
-      quantidadeMovelNaoObrigatorio: 0,
-      nome: "Delivery Balsas",
-      uf: "MA",
-      cidade: "Balsas",
-    },
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 0,
-      total: 0,
-      quantidade: 4,
-      quantidadeLoja: 0,
-      totalMovel: 0,
-      quantidadeMovel: 4,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 0,
-      quantidadeMovelNaoObrigatorio: 0,
-      nome: "Delivery Timon",
-      uf: "MA",
-      cidade: "Timon",
-    },
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 153,
-      total: 153,
-      quantidade: 64,
-      quantidadeLoja: 58,
-      totalMovel: 0,
-      quantidadeMovel: 6,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 153,
-      quantidadeMovelNaoObrigatorio: 58,
-      nome: "Starcheck Filial Inter",
-      uf: "MA",
-      cidade: "Imperatriz",
-    },
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 31305,
-      total: 31305,
-      quantidade: 68,
-      quantidadeLoja: 68,
-      totalMovel: 0,
-      quantidadeMovel: 0,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 31305,
-      quantidadeMovelNaoObrigatorio: 68,
-      nome: "Starcheck Matriz Inter",
-      uf: "MA",
-      cidade: "São Luís",
-    },
-  ],
-
-  [
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 0,
-      total: 0,
-      quantidade: 9,
-      quantidadeLoja: 0,
-      totalMovel: 0,
-      quantidadeMovel: 9,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 0,
-      quantidadeMovelNaoObrigatorio: 0,
-      nome: "Delivery Balsas",
-      uf: "MA",
-      cidade: "Balsas",
-    },
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 0,
-      total: 0,
-      quantidade: 4,
-      quantidadeLoja: 0,
-      totalMovel: 0,
-      quantidadeMovel: 4,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 0,
-      quantidadeMovelNaoObrigatorio: 0,
-      nome: "Delivery Timon",
-      uf: "MA",
-      cidade: "Timon",
-    },
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 153,
-      total: 153,
-      quantidade: 64,
-      quantidadeLoja: 58,
-      totalMovel: 0,
-      quantidadeMovel: 6,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 153,
-      quantidadeMovelNaoObrigatorio: 58,
-      nome: "Starcheck Filial Inter",
-      uf: "MA",
-      cidade: "Imperatriz",
-    },
-    {
-      quantidadeRevistoria: 0,
-      totalMovelObrigatorio: 0,
-      totalLoja: 31305,
-      total: 31305,
-      quantidade: 68,
-      quantidadeLoja: 68,
-      totalMovel: 0,
-      quantidadeMovel: 0,
-      totalRevistoria: 0,
-      quantidadeMovelObrigatorio: 0,
-      totalMovelNaoObrigatorio: 31305,
-      quantidadeMovelNaoObrigatorio: 68,
-      nome: "Starcheck Matriz Inter",
-      uf: "MA",
-      cidade: "São Luís",
-    },
-  ],
-];
-
 export const HomeTemplate = () => {
-  const {
-    filterDate,
-    setFilterDate,
-    handleFilter,
-    dataGeral,
-    dataLojas,
-    producao,
-  } = useHome();
+  const { filterDate, setFilterDate, handleFilter, dataGeral } = useHome();
 
   return (
     <LayoutTemplate>
@@ -194,38 +43,33 @@ export const HomeTemplate = () => {
         <S.ListCards>
           <S.Card>
             <p>Ticket Médio</p>
-            <span>
-              {maskMoney(dataGeral[0]?.total / dataGeral[0]?.quantidade) ||
-                "R$ 0,00"}
-            </span>
+            <span>{maskMoney(dataGeral?.ticketMedio) || "R$ 0,00"}</span>
           </S.Card>
           <S.Card>
             <p>Revistorias</p>
-            <span>{dataGeral[0]?.quantidadeRevistoria | 0}</span>
+            <span>{dataGeral?.revistorias | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Loja</p>
-            <span>{dataGeral[0]?.quantidadeLoja | 0}</span>
+            <span>{dataGeral?.totalLoja | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Móvel</p>
-            <span>{dataGeral[0]?.totalMovel | 0}</span>
+            <span>{dataGeral?.totalMovel | 0}</span>
           </S.Card>
           <S.Card className="active">
             <p>Total Vistorias</p>
-            <span>
-              {(dataGeral[0]?.totalLoja + dataGeral[0]?.totalMovel) | 0}
-            </span>
+            <span>{dataGeral?.totalVistorias | 0}</span>
           </S.Card>
         </S.ListCards>
         <S.ListCards>
           <S.Card>
             <p>Móvel Obrigatório</p>
-            <span>{dataGeral[0]?.quantidadeMovelObrigatorio | 0}</span>
+            <span>{dataGeral?.movelObrigatorio | 0}</span>
           </S.Card>
           <S.Card>
             <p>Móvel Não Obri.</p>
-            <span>{dataGeral[0]?.quantidadeMovelNaoObrigatorio | 0}</span>
+            <span>{dataGeral?.movelNaoObrigatorio | 0}</span>
           </S.Card>
         </S.ListCards>
       </S.WrapperListCards>
@@ -259,13 +103,18 @@ export const HomeTemplate = () => {
           <LineChart
             xAxis={[
               {
-                data: producao?.datas,
-                tickInterval: producao?.datas,
+                data: dataGeral?.producaoDiaria,
+                tickInterval: dataGeral.producaoDiaria,
                 scaleType: "time",
                 valueFormatter: (date) => dayjs(date)?.format("DD/MM/YYYY"),
               },
             ]}
-            series={producao?.vistorias?.map((data) => ({
+            // series={dataGeral?.totalVistorias?.map((data) => ({
+            //   // label: "Teste " + idx,
+            //   data: data,
+            //   label: "Tokyo-Vistorias",
+            // }))}
+            series={[]?.map((data) => ({
               // label: "Teste " + idx,
               data: data,
               label: "Tokyo-Vistorias",
@@ -304,7 +153,7 @@ export const HomeTemplate = () => {
           <h4>Móvel Não Obrigatório</h4>
           <h4>Total</h4>
         </S.TableHead>
-        {data.map((item) =>
+        {/* {data.map((item) =>
           item.map((_) => (
             <S.TableRow key={Math.random()}>
               <p>{_.nome || "---"}</p>
@@ -319,7 +168,7 @@ export const HomeTemplate = () => {
               <p>Total</p>
             </S.TableRow>
           ))
-        )}
+        )} */}
       </S.Table>
     </LayoutTemplate>
   );

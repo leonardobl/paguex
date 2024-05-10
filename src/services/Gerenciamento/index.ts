@@ -1,23 +1,19 @@
 import { AxiosResponse } from "axios";
 import { ApiBrave } from "../../Apis/Brave";
 import {
-  IGerenciamentoGeral,
+  IGerenciamentoDTO,
   IGerenciamentoLojas,
   IGerenciamentoProducao,
+  IGerenciamentoProps,
 } from "../../types/gerenciamento";
 
 const basePath = "/gerenciamento";
-
-export interface IGerenciamentoProps {
-  dataInicio: string;
-  dataFim: string;
-}
 
 export class Gerenciamento {
   static async geral({
     dataInicio,
     dataFim,
-  }: IGerenciamentoProps): Promise<AxiosResponse<IGerenciamentoGeral[]>> {
+  }: IGerenciamentoProps): Promise<AxiosResponse<IGerenciamentoDTO>> {
     return ApiBrave.get(
       `${basePath}/geral?dataInicio=${dataInicio}&dataFim=${dataFim}`
     );
