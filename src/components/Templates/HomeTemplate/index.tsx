@@ -8,6 +8,17 @@ import { LineChart } from "@mui/x-charts";
 import { useHome } from "./useHome";
 import { maskMoney } from "../../../utils/masks";
 import dayjs from "dayjs";
+import { reverseToBrDate } from "../../../utils/dateTransform";
+
+const xLabels = [
+  "Page A",
+  "Page B",
+  "Page C",
+  "Page D",
+  "Page E",
+  "Page F",
+  "Page G",
+];
 
 export const HomeTemplate = () => {
   const { filterDate, setFilterDate, handleFilter, dataGeral } = useHome();
@@ -92,10 +103,6 @@ export const HomeTemplate = () => {
                 itemGap: 10,
               },
             }}
-            // series={[
-            //   { data: [3, 4, 1, 6, 5], label: "Series A1", color: "#2556CC" },
-            //   { data: [4, 3, 1, 5, 8], label: "Series A2", color: "#54ACF2" },
-            // ]}
             series={
               dataGeral?.empresas?.map((item) => ({
                 data: [item.qtdLoja, item.qtdDelivery],
@@ -108,24 +115,21 @@ export const HomeTemplate = () => {
         <S.CardProducao>
           <S.TitleCard>PRODUÇÃO DIÁRIA TOTAL DE VISTORIAS</S.TitleCard>
           <LineChart
+            series={
+              dataGeral?.producaoDiaria?.map((item) => ({
+                label: item.empresa,
+                data: [item.producao[0].vistorias],
+              })) || []
+            }
             xAxis={[
               {
-                data: dataGeral?.producaoDiaria,
-                tickInterval: dataGeral.producaoDiaria,
-                scaleType: "time",
-                valueFormatter: (date) => dayjs(date)?.format("DD/MM/YYYY"),
+                scaleType: "band",
+                data:
+                  dataGeral?.producaoDiaria?.map((item) =>
+                    reverseToBrDate(item?.producao[0]?.data)
+                  ) || [],
               },
             ]}
-            // series={dataGeral?.totalVistorias?.map((data) => ({
-            //   // label: "Teste " + idx,
-            //   data: data,
-            //   label: "Tokyo-Vistorias",
-            // }))}
-            series={[]?.map((data) => ({
-              // label: "Teste " + idx,
-              data: data,
-              label: "Tokyo-Vistorias",
-            }))}
             slotProps={{
               legend: {
                 position: {
