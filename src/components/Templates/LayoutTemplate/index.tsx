@@ -48,7 +48,7 @@ export const LayoutTemplate = ({
         <S.Header>
           <S.WrapperHeaderContent>
             <h2>Relatórios</h2>
-            <S.LogoBar src="/assets/svg/logo-paguex.svg" alt="Logo empresa" />
+            <S.LogoBar src="/assets/img/logo-brave.png" alt="Logo empresa" />
           </S.WrapperHeaderContent>
         </S.Header>
         <S.Container>
