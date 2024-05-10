@@ -77,6 +77,7 @@ export const HomeTemplate = () => {
         <S.CardVistoria>
           <S.TitleCard>Vistorias (%)</S.TitleCard>
           <BarChart
+            xAxis={[{ scaleType: "band", data: ["Lojas", "Deliverys"] }]}
             slotProps={{
               legend: {
                 position: {
@@ -91,10 +92,16 @@ export const HomeTemplate = () => {
                 itemGap: 10,
               },
             }}
-            series={[
-              { data: [3, 4, 1, 6, 5], label: "Series A1", color: "#2556CC" },
-              { data: [4, 3, 1, 5, 8], label: "Series A2", color: "#54ACF2" },
-            ]}
+            // series={[
+            //   { data: [3, 4, 1, 6, 5], label: "Series A1", color: "#2556CC" },
+            //   { data: [4, 3, 1, 5, 8], label: "Series A2", color: "#54ACF2" },
+            // ]}
+            series={
+              dataGeral?.empresas?.map((item) => ({
+                data: [item.qtdLoja, item.qtdDelivery],
+                label: item?.empresa,
+              })) || []
+            }
             skipAnimation={true}
           />
         </S.CardVistoria>
