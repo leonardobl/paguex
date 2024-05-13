@@ -3,6 +3,7 @@ import { useSessionStorage } from "../../../hooks/useSessionStorage";
 import { cleanStorage } from "../../../utils/cleanStorage";
 import { useContextSite } from "../../../context/Context";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const useLayout = () => {
   const [usuario, setUsuario] = useSessionStorage("Usuario");
@@ -21,5 +22,5 @@ export const useLayout = () => {
       setIsLoad(false);
     }, 1000);
   }
-  return { firstName, handleLogout, navigate };
+  return { firstName, handleLogout, navigate, NavLink };
 };

@@ -25,7 +25,7 @@ export const Bar = styled.div`
   max-width: 120px;
   width: 100%;
   min-height: 100dvh;
-  background: #0f2356;
+  background: #1d1d1b;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ export const Headerbar = styled.div`
     line-height: 1rem; /* 133.333% */
 
     span {
-      color: #54acf2;
+      color: #e84e1b;
     }
   }
 
@@ -88,9 +88,27 @@ export const Main = styled.main`
 `;
 
 export const Nav = styled.nav``;
-export const MenuList = styled.ul``;
+
+export const MenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 32px 0;
+`;
+
 export const MenuListItem = styled.li`
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.36));
+  background-color: #e84e1b;
+
+  &:has(> a.active) {
+    background-color: #761b0e;
+  }
 `;
 
 export const Container = styled.div`

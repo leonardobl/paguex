@@ -13,7 +13,7 @@ export const LayoutTemplate = ({
   paddingSecond,
   ...rest
 }: ILayoutProps) => {
-  const { firstName, handleLogout, navigate } = useLayout();
+  const { firstName, handleLogout, navigate, NavLink } = useLayout();
   return (
     <S.Wrapper {...rest}>
       <S.Bar>
@@ -35,11 +35,31 @@ export const LayoutTemplate = ({
         <S.Nav>
           <S.MenuList>
             <S.MenuListItem>
-              <img
-                src="/assets/svg/graficos.svg"
-                alt="icone grafico"
-                onClick={() => navigate("/")}
-              />
+              <NavLink to={"/"}>
+                <img
+                  src="/assets/svg/icon-relatorio.svg"
+                  alt="icone grafico"
+                  onClick={() => navigate("/")}
+                />
+              </NavLink>
+            </S.MenuListItem>
+            <S.MenuListItem>
+              <NavLink to={"/graph1"}>
+                <img
+                  src="/assets/svg/icon-graph1.svg"
+                  alt="icone grafico"
+                  onClick={() => navigate("/")}
+                />
+              </NavLink>
+            </S.MenuListItem>
+            <S.MenuListItem>
+              <NavLink to={"/graph2"}>
+                <img
+                  src="/assets/svg/icon-graph2.svg"
+                  alt="icone grafico"
+                  onClick={() => navigate("/")}
+                />
+              </NavLink>
             </S.MenuListItem>
           </S.MenuList>
         </S.Nav>
