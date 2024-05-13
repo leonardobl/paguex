@@ -164,22 +164,20 @@ export const HomeTemplate = () => {
           <h4>Móvel Não Obrigatório</h4>
           <h4>Total</h4>
         </S.TableHead>
-        {/* {data.map((item) =>
-          item.map((_) => (
-            <S.TableRow key={Math.random()}>
-              <p>{_.nome || "---"}</p>
-              <p>{_.cidade || "---"}</p>
-              <p>{_.quantidadeLoja || 0}</p>
-              <p>{_.quantidadeLoja.toFixed(2)}%</p>
-              <p>{_.quantidadeMovel || 0}</p>
-              <p>20%</p>
-              <p>40</p>
-              <p>10</p>
-              <p>10</p>
-              <p>Total</p>
-            </S.TableRow>
-          ))
-        )} */}
+        {dataGeral?.lojas?.map((item) => (
+          <S.TableRow key={Math.random()}>
+            <p>{item?.empresa || "---"}</p>
+            <p>{item?.loja || "---"}</p>
+            <p>{item?.qtdLoja || 0}</p>
+            <p>{item?.perLoja || 0} %</p>
+            <p>{item?.qtdMovel || 0}</p>
+            <p>{item?.perMovel || 0} %</p>
+            <p>{item?.revistorias || 0}</p>
+            <p>{item.movelObrigatorio || 0}</p>
+            <p>{item.movelNaoObrigatorio || 0}</p>
+            <p>{item.total || 0}</p>
+          </S.TableRow>
+        ))}
       </S.Table>
     </LayoutTemplate>
   );
