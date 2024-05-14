@@ -35,6 +35,8 @@ export const ProductivityTemplate = () => {
             </div>
           </S.Filter>
         )}
+
+        <h3>Leonardo Lima</h3>
       </S.Container>
     </LayoutTemplate>
   );
