@@ -9,7 +9,7 @@ import { GlobalStyles } from "./global/globalStyles";
 import { Login } from "./components/Pages/Login";
 import { ProtectedRoute } from "./components/Atoms/ProtectedRoute";
 import { FogotPassword } from "./components/Pages/FogotPassword";
-import { Home } from "./components/Pages/Home";
+import { General } from "./components/Pages/General";
 import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
 
 export function App() {
@@ -27,7 +27,7 @@ export function App() {
                 path="/geral"
                 element={
                   <ProtectedRoute>
-                    <Home />
+                    <General />
                   </ProtectedRoute>
                 }
               />
@@ -36,7 +36,7 @@ export function App() {
                 path="/tendencia"
                 element={
                   <ProtectedRoute>
-                    <Home />
+                    <General />
                   </ProtectedRoute>
                 }
               />
@@ -45,7 +45,7 @@ export function App() {
                 path="/produtividade"
                 element={
                   <ProtectedRoute>
-                    <Home />
+                    <General />
                   </ProtectedRoute>
                 }
               />

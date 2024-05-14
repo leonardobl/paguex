@@ -6,11 +6,13 @@ import { useLayout } from "./useLayout";
 interface ILayoutProps extends ComponentProps<"div"> {
   children?: React.ReactNode;
   paddingSecond?: boolean;
+  title: string;
 }
 
 export const LayoutTemplate = ({
   children,
   paddingSecond,
+  title,
   ...rest
 }: ILayoutProps) => {
   const { firstName, handleLogout, navigate, NavLink } = useLayout();
@@ -67,7 +69,7 @@ export const LayoutTemplate = ({
       <S.Main>
         <S.Header>
           <S.WrapperHeaderContent>
-            <h2>Relatórios de Produção Geral</h2>
+            <h2>{title}</h2>
             <S.LogoBar src="/assets/img/logo-brave.png" alt="Logo empresa" />
           </S.WrapperHeaderContent>
         </S.Header>

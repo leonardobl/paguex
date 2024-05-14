@@ -2,24 +2,30 @@ import styled from "styled-components";
 
 export const MainButton = styled.button`
   display: flex;
-  width: 8rem;
-  height: 2.75rem;
+  width: 6rem;
+  height: 2.25rem;
+  padding: 0.625rem 2.5625rem;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  border-radius: 0.25rem;
   border: none;
-  background: linear-gradient(180deg, #2556cc 0%, #0f2356 100%);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  background: #e84e1b;
 
   color: #fff;
   text-align: center;
-  font-size: 16px;
+  font-size: 0.875rem;
   font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
+  font-weight: 400;
+  line-height: 1.25rem;
 
-  &[data-variant-light="true"] {
-    background: #2556cc;
+  transition: all 0.2s linear;
+
+  &:active {
+    background: #761b0e;
+  }
+
+  &:disabled {
+    background: #a3a3a3;
+    cursor: default;
   }
 `;

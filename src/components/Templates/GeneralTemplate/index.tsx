@@ -7,29 +7,19 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts";
 import { useHome } from "./useHome";
 import { maskMoney } from "../../../utils/masks";
-import dayjs from "dayjs";
 import { reverseToBrDate } from "../../../utils/dateTransform";
 
-const xLabels = [
-  "Page A",
-  "Page B",
-  "Page C",
-  "Page D",
-  "Page E",
-  "Page F",
-  "Page G",
-];
-
-export const HomeTemplate = () => {
+export const GeneralTemplate = () => {
   const { filterDate, setFilterDate, handleFilter, dataGeral } = useHome();
 
   return (
-    <LayoutTemplate>
+    <LayoutTemplate title="Relatórios de Produção Geral">
       <S.FormDateFilter onSubmit={handleFilter}>
         <div>
           <S.Label>Data Inicial</S.Label>
           <InputDate
             required
+            showIcon
             selected={filterDate?.dataIncio}
             placeholderText="___/___/___"
             onChange={(e) =>
@@ -41,6 +31,7 @@ export const HomeTemplate = () => {
           <S.Label>Data Final</S.Label>
           <InputDate
             required
+            showIcon
             selected={filterDate?.dataFim}
             placeholderText="___/___/___"
             onChange={(e) => setFilterDate((prev) => ({ ...prev, dataFim: e }))}

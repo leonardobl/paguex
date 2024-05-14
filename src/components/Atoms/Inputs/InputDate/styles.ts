@@ -23,8 +23,9 @@ export const Container = styled.div<{ $showIcon?: boolean }>`
       min-width: 100%;
 
       svg {
-        right: 15px;
-        top: 5px;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
         font-size: 24px;
       }
     }
@@ -48,10 +49,10 @@ export const Container = styled.div<{ $showIcon?: boolean }>`
     .react-datepicker__input-container {
       input {
         width: 100%;
-        height: 3rem;
 
+        height: 2.625rem;
         border-radius: 0.25rem;
-        border: 1px solid #bbc2d1;
+        border: 0.5px solid #9d9d9d;
         background: #fff;
 
         padding: 0 30px;
