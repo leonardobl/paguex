@@ -51,9 +51,10 @@ export const ListCards = styled.div`
 export const Card = styled.div`
   width: 10rem;
   height: 6rem;
+
   border-radius: 0.25rem;
-  border: 1px solid #bbc2d1;
-  background: #ecf0f8;
+  background: #f6f6f6;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
 
   display: flex;
   flex-direction: column;
@@ -62,29 +63,29 @@ export const Card = styled.div`
   gap: 1rem;
 
   &.active {
-    background: #0f2356;
+    background: #1d1d1b;
 
     > span {
-      color: #54acf2;
+      color: #fff;
     }
   }
 
   > p {
-    color: #f17f26;
+    color: #e84e1b;
     text-align: center;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.25rem; /* 125% */
+    line-height: 1.25rem;
   }
 
   > span {
-    color: #0f2356;
+    color: #1d1d1b;
     text-align: center;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.25rem; /* 83.333% */
+    line-height: 1.25rem;
   }
 `;
 
@@ -94,18 +95,21 @@ export const CardVistoria = styled.div`
   width: 100%;
   height: 18.5rem;
   border-radius: 0.25rem;
-  border: 1px solid #bbc2d1;
-  background: #ecf0f8;
-  box-shadow: 4px 4px 9px 0px rgba(19, 35, 77, 0.2);
+
+  border-radius: 0.25rem;
+  background: #f6f6f6;
+  box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.2);
 `;
 export const CardProducao = styled.div`
   padding: 1rem;
   width: 100%;
   max-width: 47.125rem;
   height: 18.5625rem;
+
   border-radius: 0.25rem;
-  border: 1px solid var(--INPUT, #bbc2d1);
-  background: var(--PAGX3, #ecf0f8);
+  background: #f6f6f6;
+  box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.2);
+
   box-shadow: 4px 4px 9px 0px rgba(19, 35, 77, 0.2);
 `;
 
@@ -146,8 +150,9 @@ export const Table = styled.div`
 
   > div {
     border-radius: 0.25rem;
-    background: #ecf0f8;
-    box-shadow: 0px 4px 9px 0px rgba(15, 35, 86, 0.2);
+    background: #f6f6f6;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2);
+
     width: 100%;
     height: 3.5rem;
     display: grid;
@@ -163,7 +168,8 @@ export const Table = styled.div`
 
 export const TableHead = styled.div`
   h4 {
-    color: #0f2356;
+    color: #1d1d1b;
+    font-family: "Noto Sans";
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
@@ -174,11 +180,12 @@ export const TableHead = styled.div`
 
 export const TableRow = styled.div`
   &:hover {
-    background: ${darken(0.03, "#ecf0f8")};
+    background: ${darken(0.03, "#f6f6f6")};
   }
 
   p {
-    color: #8b9eb2;
+    color: #a3a3a3;
+    font-family: "Noto Sans";
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
