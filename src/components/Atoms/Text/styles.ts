@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const MainText = styled.div`
   ${({ theme: { colors, margin, screen, textSize } }) => css`
-    color: ${colors.blueMain};
+    color: ${colors.black};
     text-align: center;
     font-style: normal;
     font-weight: 500;

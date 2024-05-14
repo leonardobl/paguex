@@ -1,8 +1,12 @@
 export const Theme = {
   colors: {
-    blueMain: "#0F2356",
-    bgColor: "#ECF0F8",
-    borderColor: "#BBC2D1",
+    "orange-100": "#E84E1B",
+    "orange-300": "#761B0E",
+    "gray-100": "#A3A3A3",
+    "gray-300": "#3C3C3B",
+    black: "#1D1D1B",
+    bgColor: "#fff",
+    borderColor: "#cbcbcb",
     textColor: "#8B9EB2",
     red: "#ED0000",
   },

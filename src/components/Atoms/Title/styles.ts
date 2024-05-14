@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const MainTitle = styled.h1`
   ${({ theme: { colors, margin, screen, textSize } }) => css`
-    color: ${colors.blueMain};
+    color: ${colors["orange-100"]};
     text-align: center;
     font-style: normal;
     font-weight: 900;

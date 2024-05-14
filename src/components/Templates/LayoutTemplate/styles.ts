@@ -17,7 +17,7 @@ export const Header = styled.header`
   height: 84px;
   margin-bottom: 3rem;
 
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 1px solid ${(props) => props.theme.colors.borderColor};
 `;
 
 export const Bar = styled.div`
@@ -25,7 +25,7 @@ export const Bar = styled.div`
   max-width: 120px;
   width: 100%;
   min-height: 100dvh;
-  background: #1d1d1b;
+  background: ${(props) => props.theme.colors.black};
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -83,7 +83,7 @@ export const WrapperHeaderContent = styled.div`
     max-width: calc(${screen["2xl"]} - 126px);
 
     > h2 {
-      color: var(--BRAVE04, #1d1d1b);
+      color: #1d1d1b;
       text-align: center;
       font-family: "Noto Sans";
       font-size: 20px;

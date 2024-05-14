@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
 export const LogoBar = styled.img`
   width: 159px;
-  height: 29px;
+  /* height: 29px; */
   cursor: pointer;
 `;
 

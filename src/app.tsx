@@ -12,6 +12,7 @@ import { FogotPassword } from "./components/Pages/FogotPassword";
 import { General } from "./components/Pages/General";
 import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
 import { Tendencies } from "./components/Pages/Tendencies";
+import { Productivity } from "./components/Pages/Productivity";
 
 export function App() {
   return (
@@ -46,7 +47,7 @@ export function App() {
                 path="/produtividade"
                 element={
                   <ProtectedRoute>
-                    <General />
+                    <Productivity />
                   </ProtectedRoute>
                 }
               />

@@ -22,7 +22,7 @@ export const LayoutNoUserTemplate = ({
       <Bar>
         <S.FlexWrapperBar>
           <S.LogoBar
-            src={`/assets/svg/paguex-logo.svg`}
+            src={`/assets/img/logo-brave-white.png`}
             alt="logo da empresa"
             onClick={() => navigate("/")}
           />

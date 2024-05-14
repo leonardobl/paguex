@@ -37,7 +37,7 @@ export const Container = styled.div<{ $showIcon?: boolean }>`
     .react-datepicker__close-icon {
       &::after {
         background-color: transparent;
-        color: #12d1a7;
+        color: ${(props) => props.theme.colors["gray-300"]};
         font-size: 21px;
         position: absolute;
         font-weight: 900;
@@ -52,11 +52,11 @@ export const Container = styled.div<{ $showIcon?: boolean }>`
 
         height: 2.625rem;
         border-radius: 0.25rem;
-        border: 0.5px solid #9d9d9d;
+        border: 0.5px solid ${(props) => props.theme.colors.borderColor};
         background: #fff;
 
         padding: 0 30px;
-        color: #111;
+        color: ${(props) => props.theme.colors["gray-300"]};
         font-size: 16px;
         font-weight: 600;
 

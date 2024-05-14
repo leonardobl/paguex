@@ -17,9 +17,10 @@ export const Container = styled.div`
       cursor: pointer;
       position: absolute;
       right: 14px;
-      top: 19px;
-      filter: brightness(0) saturate(100%) invert(9%) sepia(65%) saturate(3407%)
-        hue-rotate(217deg) brightness(86%) contrast(92%);
+      top: 50%;
+      transform: translateY(-50%);
+      filter: brightness(0) saturate(100%) invert(20%) sepia(8%) saturate(92%)
+        hue-rotate(21deg) brightness(96%) contrast(88%);
     }
   `}
 `;
@@ -52,14 +53,15 @@ export const Input = styled.input<{ $typeInput?: string }>`
 
     height: 2.625rem;
     border-radius: 0.25rem;
-    border: 0.5px solid #9d9d9d;
+    border: 0.5px solid ${(props) => props.theme.colors.borderColor};
     background: #fff;
 
     padding: ${$typeInput === "password" ? "0 40px 0 20px" : "0 20px"};
     font-size: 16px;
     font-family: "Noto Sans";
     font-weight: 400;
-    color: ${darken(0.4, "#8b9eb2")};
+    color: ${(props) => props.theme.colors["gray-300"]};
+
     letter-spacing: 1;
 
     &[type="number"]::-webkit-inner-spin-button {
@@ -79,12 +81,4 @@ export const Input = styled.input<{ $typeInput?: string }>`
       border: 1px solid #adb7b5;
     }
   `}
-`;
-
-export const IconEdit = styled.img`
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
 `;
