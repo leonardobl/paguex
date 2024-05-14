@@ -36,7 +36,7 @@ export const LayoutTemplate = ({
         </S.Headerbar>
         <S.Nav>
           <S.MenuList>
-            <S.MenuListItem>
+            <S.MenuListItem title="Geral">
               <NavLink to={"/geral"}>
                 <img
                   src="/assets/svg/icon-relatorio.svg"
@@ -45,7 +45,7 @@ export const LayoutTemplate = ({
                 />
               </NavLink>
             </S.MenuListItem>
-            <S.MenuListItem>
+            <S.MenuListItem title="Dashboard de Tendência">
               <NavLink to={"/tendencia"}>
                 <img
                   src="/assets/svg/icon-graph1.svg"

@@ -11,6 +11,7 @@ import { ProtectedRoute } from "./components/Atoms/ProtectedRoute";
 import { FogotPassword } from "./components/Pages/FogotPassword";
 import { General } from "./components/Pages/General";
 import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
+import { Tendencies } from "./components/Pages/Tendencies";
 
 export function App() {
   return (
@@ -36,7 +37,7 @@ export function App() {
                 path="/tendencia"
                 element={
                   <ProtectedRoute>
-                    <General />
+                    <Tendencies />
                   </ProtectedRoute>
                 }
               />

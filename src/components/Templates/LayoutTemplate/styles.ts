@@ -107,17 +107,19 @@ export const MenuList = styled.ul`
 `;
 
 export const MenuListItem = styled.li`
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  > a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  width: 50px;
-  height: 50px;
-  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.36));
-  background-color: #e84e1b;
+    width: 50px;
+    height: 50px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.36);
+    background-color: #e84e1b;
+  }
 
-  &:has(> a.active) {
+  > a.active {
     background-color: #761b0e;
   }
 `;
