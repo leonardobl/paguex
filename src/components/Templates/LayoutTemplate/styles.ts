@@ -15,9 +15,9 @@ export const LogoBar = styled.img`
 export const Header = styled.header`
   width: 100%;
   height: 84px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 3rem;
 
-  border-bottom: 1px solid #bbc2d1;
+  border-bottom: 1px solid #cbcbcb;
 `;
 
 export const Bar = styled.div`
@@ -62,6 +62,7 @@ export const Headerbar = styled.div`
     background: transparent;
     outline: none;
     border: none;
+    color: #a3a3a3;
   }
 `;
 
@@ -80,6 +81,16 @@ export const WrapperHeaderContent = styled.div`
     width: 100%;
     padding: 0 16px;
     max-width: calc(${screen["2xl"]} - 126px);
+
+    > h2 {
+      color: var(--BRAVE04, #1d1d1b);
+      text-align: center;
+      font-family: "Noto Sans";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 100% */
+    }
   `}
 `;
 

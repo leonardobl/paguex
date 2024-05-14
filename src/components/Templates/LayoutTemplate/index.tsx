@@ -35,7 +35,7 @@ export const LayoutTemplate = ({
         <S.Nav>
           <S.MenuList>
             <S.MenuListItem>
-              <NavLink to={"/"}>
+              <NavLink to={"/geral"}>
                 <img
                   src="/assets/svg/icon-relatorio.svg"
                   alt="icone grafico"
@@ -44,7 +44,7 @@ export const LayoutTemplate = ({
               </NavLink>
             </S.MenuListItem>
             <S.MenuListItem>
-              <NavLink to={"/graph1"}>
+              <NavLink to={"/tendencia"}>
                 <img
                   src="/assets/svg/icon-graph1.svg"
                   alt="icone grafico"
@@ -53,7 +53,7 @@ export const LayoutTemplate = ({
               </NavLink>
             </S.MenuListItem>
             <S.MenuListItem>
-              <NavLink to={"/graph2"}>
+              <NavLink to={"/produtividade"}>
                 <img
                   src="/assets/svg/icon-graph2.svg"
                   alt="icone grafico"
@@ -67,7 +67,7 @@ export const LayoutTemplate = ({
       <S.Main>
         <S.Header>
           <S.WrapperHeaderContent>
-            <h2>Relatórios</h2>
+            <h2>Relatórios de Produção Geral</h2>
             <S.LogoBar src="/assets/img/logo-brave.png" alt="Logo empresa" />
           </S.WrapperHeaderContent>
         </S.Header>

@@ -1,7 +1,7 @@
 import React from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "styled-components";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { ContextProvider } from "./context/Context";
 import { Theme } from "./global/theme";
@@ -21,16 +21,39 @@ export function App() {
         <ContextProvider>
           <BrowserRouter>
             <Routes>
+              <Route path="/" element={<Navigate to={"/geral"} />} />
+
               <Route
-                path="/"
+                path="/geral"
                 element={
                   <ProtectedRoute>
                     <Home />
                   </ProtectedRoute>
                 }
               />
+
+              <Route
+                path="/tendencia"
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/produtividade"
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+
               <Route path="/login" element={<Login />} />
+
               <Route path="/recuperar-senha" element={<RecoveryPassword />} />
+
               <Route path="/esqueci-senha" element={<FogotPassword />} />
             </Routes>
           </BrowserRouter>
