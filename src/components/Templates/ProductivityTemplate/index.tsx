@@ -36,7 +36,45 @@ export const ProductivityTemplate = () => {
           </S.Filter>
         )}
 
-        <h3>Leonardo Lima</h3>
+        <S.Table>
+          <S.TableHead>
+            <tr>
+              <td className="fixeSize" rowSpan={3}>
+                Nome do Vistoriador
+              </td>
+              <td className="fixeSize" rowSpan={3}>
+                Empresa
+              </td>
+              <td className="fixeSize" rowSpan={3}>
+                Loja
+              </td>
+              <td colSpan={4}>Atendimento Loja</td>
+            </tr>
+            <tr>
+              <td className="textSmall" colSpan={2}>
+                Vistoria de Transferência
+              </td>
+              <td className="textSmall" colSpan={2}>
+                Primeiro Emplacamento
+              </td>
+            </tr>
+
+            <tr>
+              <td className="textSmall fixeSize bg-orange">
+                Quantidade de vistorias
+              </td>
+              <td className="textSmall fixeSize bg-orange">
+                Tempo médio de vistorias
+              </td>
+              <td className="textSmall fixeSize bg-orange">
+                Quantidade de vistorias
+              </td>
+              <td className="textSmall fixeSize bg-orange">
+                Tempo médio de vistorias
+              </td>
+            </tr>
+          </S.TableHead>
+        </S.Table>
       </S.Container>
     </LayoutTemplate>
   );
