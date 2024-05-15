@@ -38,6 +38,12 @@ export const useLogin = () => {
   });
 
   useEffect(() => {
+    if (token) {
+      navigate("/geral");
+    }
+  }, []);
+
+  useEffect(() => {
     if (watch("cpfCNPJ")?.length > 14) {
       setValue("cpfCNPJ", maskCnpj(watch("cpfCNPJ")));
       return;

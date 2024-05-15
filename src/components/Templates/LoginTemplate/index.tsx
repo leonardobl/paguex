@@ -27,7 +27,11 @@ export const LoginTemplate = () => {
             <S.Label>Senha</S.Label>
             <Input {...register("senha")} id="senha" type="password" />
             {errors?.senha && <MessageErro>{errors.senha.message}</MessageErro>}
-            <button className="button-forgot" type="button">
+            <button
+              className="button-forgot"
+              type="button"
+              onClick={() => navigate("/esqueci-senha")}
+            >
               Esqueceu sua senha?
             </button>
           </div>
