@@ -27,9 +27,8 @@ export const Container = styled.div`
 `;
 
 export const LeftSide = styled.div`
-  > img {
-    display: block;
-  }
+  width: 50%;
+  min-height: 100vh;
 `;
 
 export const RigthSide = styled.div`

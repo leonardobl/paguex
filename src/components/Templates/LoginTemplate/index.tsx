@@ -10,7 +10,7 @@ export const LoginTemplate = () => {
   return (
     <S.Container>
       <S.LeftSide>
-        <img src="/assets/img/big-brave.png" alt="leao brave" />
+        <img src="/assets/img/big-brave.png" alt="" />
       </S.LeftSide>
       <S.RigthSide>
         <h1>Login</h1>
