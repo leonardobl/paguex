@@ -1,49 +1,34 @@
 import React from "react";
 import * as S from "./styles";
-import { Title } from "../../Atoms/Title";
-import { Input } from "../../Atoms/Inputs/Input";
-import { Button } from "../../Atoms/Button";
 import { useLogin } from "./useLogin";
-import { LayoutNoUserTemplate } from "../LayoutNoUserTemplate";
+import { Input } from "../../Atoms/Inputs/Input";
 
 export const LoginTemplate = () => {
   const { navigate, handleSubmit, form, setForm, handleCpf } = useLogin();
 
   return (
-    <LayoutNoUserTemplate>
-      <S.Container>
-        <Title>Login</Title>
-        <S.Form onSubmit={handleSubmit}>
+    <S.Container>
+      <S.LeftSide>
+        <img src="/assets/img/big-brave.png" alt="leao brave" />
+      </S.LeftSide>
+      <S.RigthSide>
+        <h1>Login</h1>
+        <p>Preencha o formulário abaixo para fazer login.</p>
+        <S.Form>
           <div>
             <S.Label>CPF</S.Label>
-            <Input
-              required
-              maxLength={18}
-              value={form?.cpfCNPJ}
-              onChange={(e) => {
-                handleCpf(e.target.value);
-              }}
-            />
+            <Input />
           </div>
           <div>
             <S.Label>Senha</S.Label>
-            <Input
-              required
-              type="password"
-              value={form.senha}
-              onChange={(e) =>
-                setForm((prev) => ({ ...prev, senha: e.target.value }))
-              }
-            />
-            <S.ForgotButton onClick={() => navigate("/esqueci-senha")}>
-              Esqueceu sua senha?
-            </S.ForgotButton>
+            <Input />
+            <button className="button-forgot">Esqueceu sua senha?</button>
           </div>
           <div>
-            <Button id="submit">Entrar</Button>
+            <button className="send">Entrar</button>
           </div>
         </S.Form>
-      </S.Container>
-    </LayoutNoUserTemplate>
+      </S.RigthSide>
+    </S.Container>
   );
 };
