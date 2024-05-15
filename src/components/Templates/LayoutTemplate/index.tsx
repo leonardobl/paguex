@@ -37,30 +37,24 @@ export const LayoutTemplate = ({
         <S.Nav>
           <S.MenuList>
             <S.MenuListItem title="Geral">
-              <NavLink to={"/geral"}>
-                <img
-                  src="/assets/svg/icon-relatorio.svg"
-                  alt="icone grafico"
-                  onClick={() => navigate("/")}
-                />
+              <NavLink to={"/relatorio-geral"}>
+                <img src="/assets/svg/icon-relatorio.svg" alt="icone grafico" />
               </NavLink>
             </S.MenuListItem>
             <S.MenuListItem title="Dashboard de Tendência">
-              <NavLink to={"/tendencia"}>
-                <img
-                  src="/assets/svg/icon-graph1.svg"
-                  alt="icone grafico"
-                  onClick={() => navigate("/")}
-                />
+              <NavLink to={"/relatorio-tendencia"}>
+                <img src="/assets/svg/icon-graph1.svg" alt="icone grafico" />
               </NavLink>
             </S.MenuListItem>
             <S.MenuListItem>
-              <NavLink to={"/produtividade"}>
-                <img
-                  src="/assets/svg/icon-graph2.svg"
-                  alt="icone grafico"
-                  onClick={() => navigate("/")}
-                />
+              <NavLink to={"/relatorio-produtividade"}>
+                <img src="/assets/svg/icon-graph2.svg" alt="icone grafico" />
+              </NavLink>
+            </S.MenuListItem>
+
+            <S.MenuListItem>
+              <NavLink to={"/relatorio-colchao"}>
+                <img src="/assets/svg/icon-graph3.svg" alt="icone grafico" />
               </NavLink>
             </S.MenuListItem>
           </S.MenuList>

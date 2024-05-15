@@ -13,6 +13,7 @@ import { General } from "./components/Pages/General";
 import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
 import { Tendencies } from "./components/Pages/Tendencies";
 import { Productivity } from "./components/Pages/Productivity";
+import { Mattress } from "./components/Pages/Mattress";
 
 export function App() {
   return (
@@ -23,10 +24,10 @@ export function App() {
         <ContextProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Navigate to={"/geral"} />} />
+              <Route path="/" element={<Navigate to={"/relatorio-geral"} />} />
 
               <Route
-                path="/geral"
+                path="/relatorio-geral"
                 element={
                   <ProtectedRoute>
                     <General />
@@ -35,7 +36,7 @@ export function App() {
               />
 
               <Route
-                path="/tendencia"
+                path="/relatorio-tendencia"
                 element={
                   <ProtectedRoute>
                     <Tendencies />
@@ -44,7 +45,16 @@ export function App() {
               />
 
               <Route
-                path="/produtividade"
+                path="/relatorio-colchao"
+                element={
+                  <ProtectedRoute>
+                    <Mattress />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/relatorio-produtividade"
                 element={
                   <ProtectedRoute>
                     <Productivity />
