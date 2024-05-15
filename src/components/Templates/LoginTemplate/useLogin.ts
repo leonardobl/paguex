@@ -73,7 +73,7 @@ export const useLogin = () => {
         });
         toast.success("Login efetuado com sucesso!", { autoClose: 1500 });
         setTimeout(() => {
-          navigate("/geral");
+          navigate("/relatorio-geral");
         }, 2000);
       })
       .catch(
