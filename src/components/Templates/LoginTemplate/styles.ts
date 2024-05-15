@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: 100%;
   max-width: ${(props) => props.theme.screen["2xl"]};
+  width: 100%;
   display: flex;
   align-items: center;
 
@@ -27,13 +27,21 @@ export const Container = styled.div`
 `;
 
 export const LeftSide = styled.div`
-  > img {
-    display: block;
+  width: 50%;
+  min-height: 100vh;
+  background-image: url("/assets/img/big-brave-820.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  @media (max-width: ${(props) => props.theme.screen.xl}) {
+    background-image: url("/assets/img/big-brave-620.png");
   }
 `;
 
 export const RigthSide = styled.div`
   padding: 0 6.8rem;
+  /* width: 50%; */
 
   button.button-forgot {
     color: ${(props) => props.theme.colors["gray-100"]};

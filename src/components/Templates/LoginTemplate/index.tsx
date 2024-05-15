@@ -9,9 +9,7 @@ export const LoginTemplate = () => {
 
   return (
     <S.Container>
-      <S.LeftSide>
-        <img src="/assets/img/big-brave.png" alt="leao brave" />
-      </S.LeftSide>
+      <S.LeftSide></S.LeftSide>
       <S.RigthSide>
         <h1>Login</h1>
         <p>Preencha o formulário abaixo para fazer login.</p>
