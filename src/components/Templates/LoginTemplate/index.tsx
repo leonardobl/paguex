@@ -2,9 +2,10 @@ import React from "react";
 import * as S from "./styles";
 import { useLogin } from "./useLogin";
 import { Input } from "../../Atoms/Inputs/Input";
+import { MessageErro } from "../../Atoms/MessageErro";
 
 export const LoginTemplate = () => {
-  const { navigate, handleSubmit, form, setForm, handleCpf } = useLogin();
+  const { navigate, handleSubmit, onSubmit, register, errors } = useLogin();
 
   return (
     <S.Container>
@@ -14,15 +15,21 @@ export const LoginTemplate = () => {
       <S.RigthSide>
         <h1>Login</h1>
         <p>Preencha o formulário abaixo para fazer login.</p>
-        <S.Form>
+        <S.Form onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.Label>CPF</S.Label>
-            <Input />
+            <Input {...register("cpfCNPJ")} id="cpf" maxLength={14} />
+            {errors?.cpfCNPJ && (
+              <MessageErro>{errors.cpfCNPJ.message}</MessageErro>
+            )}
           </div>
           <div>
             <S.Label>Senha</S.Label>
-            <Input />
-            <button className="button-forgot">Esqueceu sua senha?</button>
+            <Input {...register("senha")} id="senha" type="password" />
+            {errors?.senha && <MessageErro>{errors.senha.message}</MessageErro>}
+            <button className="button-forgot" type="button">
+              Esqueceu sua senha?
+            </button>
           </div>
           <div>
             <button className="send">Entrar</button>

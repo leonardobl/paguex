@@ -18,7 +18,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
     return (
       <S.Container>
         {props.label && (
-          <S.Label $isRequired={!!props.required}>
+          <S.Label $isRequired={!!props.required} htmlFor={props.id}>
             {props.label}
             <span>*</span>
           </S.Label>
@@ -29,6 +29,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
           {...props}
           type={eyeOpen ? "text" : props.type}
           onWheel={(event) => event.currentTarget.blur()}
+          required={false}
           ref={ref}
         />
         {props.type === "password" ? (

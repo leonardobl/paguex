@@ -5,42 +5,54 @@ import { maskCnpj, maskCpf, removeDigitos } from "../../../utils/masks";
 import { IAutenticacaoForm, IDecodedToken } from "../../../types/autenticacao";
 import { useSessionStorage } from "../../../hooks/useSessionStorage";
 import { useContextSite } from "../../../context/Context";
-import { useState } from "react";
+import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = z.object({
+  cpfCNPJ: z.string({ message: "Campo obrigatorio" }).min(14, "CPF invalido"),
+  senha: z.string({ message: "Campo obrigatorio" }).min(1, "Campo obrigatorio"),
+});
 
 export const useLogin = () => {
   const navigate = useNavigate();
-
-  const [form, setForm] = useState<IAutenticacaoForm>({} as IAutenticacaoForm);
   const { setIsLoad, setTokenContext } = useContextSite();
-
   const [token, setToken] = useSessionStorage("@token");
-
   const [sessionUsuario, setSessionUsuario] = useSessionStorage("Usuario");
 
-  function handleCpf(e: string) {
-    let newValue = "";
+  const {
+    register,
+    watch,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IAutenticacaoForm>({
+    defaultValues: {
+      cpfCNPJ: "",
+      senha: "",
+    },
+    resolver: zodResolver(schema),
+    mode: "onSubmit",
+  });
 
-    if (e.length > 14) {
-      newValue = maskCnpj(e) as string;
-      setForm((prev) => ({ ...prev, cpfCNPJ: newValue }));
-
+  useEffect(() => {
+    if (watch("cpfCNPJ")?.length > 14) {
+      setValue("cpfCNPJ", maskCnpj(watch("cpfCNPJ")));
       return;
     }
-    newValue = maskCpf(e) as string;
-    setForm((prev) => ({ ...prev, cpfCNPJ: newValue }));
-  }
+    setValue("cpfCNPJ", maskCpf(watch("cpfCNPJ")));
+  }, [watch("cpfCNPJ")]);
 
-  async function handleSubmit(e: React.SyntheticEvent) {
-    e.preventDefault();
+  async function onSubmit(data: IAutenticacaoForm) {
+    console.log(data);
+
+    return;
+
     setIsLoad(true);
 
-    const PAYLOAD: IAutenticacaoForm = {
-      cpfCNPJ: removeDigitos(form.cpfCNPJ),
-      senha: form.senha,
-    };
-
-    await Autenticacao.post(PAYLOAD)
+    await Autenticacao.post(data)
       .then(({ data }) => {
         setToken(data.token);
         setTokenContext(data.token);
@@ -73,5 +85,5 @@ export const useLogin = () => {
       });
   }
 
-  return { navigate, handleSubmit, form, setForm, handleCpf };
+  return { navigate, register, onSubmit, handleSubmit, errors };
 };
