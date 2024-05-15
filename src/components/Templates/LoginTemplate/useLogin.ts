@@ -46,13 +46,14 @@ export const useLogin = () => {
   }, [watch("cpfCNPJ")]);
 
   async function onSubmit(data: IAutenticacaoForm) {
-    console.log(data);
-
-    return;
+    const PAYLOAD: IAutenticacaoForm = {
+      ...data,
+      cpfCNPJ: removeDigitos(data.cpfCNPJ),
+    };
 
     setIsLoad(true);
 
-    await Autenticacao.post(data)
+    await Autenticacao.post(PAYLOAD)
       .then(({ data }) => {
         setToken(data.token);
         setTokenContext(data.token);
@@ -66,7 +67,7 @@ export const useLogin = () => {
         });
         toast.success("Login efetuado com sucesso!", { autoClose: 1500 });
         setTimeout(() => {
-          navigate("/");
+          navigate("/geral");
         }, 2000);
       })
       .catch(
