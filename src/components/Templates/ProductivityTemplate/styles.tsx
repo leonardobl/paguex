@@ -97,3 +97,18 @@ export const TableHead = styled.thead`
     }
   }
 `;
+
+export const TableBody = styled.tbody`
+  background: #f6f6f6;
+
+  td {
+    height: 3rem;
+    text-align: center;
+    color: #a3a3a3;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+  }
+`;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSessionStorage } from "../../../hooks/useSessionStorage";
 import { cleanStorage } from "../../../utils/cleanStorage";
 import { useContextSite } from "../../../context/Context";
@@ -10,6 +10,10 @@ export const useLayout = () => {
   const firstName = usuario?.nome?.split(" ")[0];
   const { setIsLoad, setTokenContext } = useContextSite();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   function handleLogout() {
     setIsLoad(true);
