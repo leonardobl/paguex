@@ -1,42 +1,28 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  margin: 0 auto;
   width: 100%;
-  min-height: 100dvh;
+  max-width: ${(props) => props.theme.screen["2xl"]};
+
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 `;
 
-export const LogoBar = styled.img`
-  width: 159px;
-  /* height: 29px; */
-  cursor: pointer;
+export const LeftSide = styled.div`
+  width: 50%;
+  height: 100vh;
+  background-image: url("/assets/img/big-brave-620.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+
+  @media (min-width: 87rem) {
+    background-image: url("/assets/img/big-brave-820.png");
+  }
 `;
 
-export const LogoFooter = styled.img`
-  width: 124px;
-  height: 31px;
-`;
-
-export const FlexWrapperBar = styled.div`
-  ${({ theme: { screen } }) => css`
-    margin: 0 auto;
-    width: 100%;
-    max-width: ${screen["2xl"]};
-    display: flex;
-    align-items: center;
-    height: 100%;
-  `}
-`;
-
-export const FlexWrapperFooter = styled.div`
-  ${({ theme: { screen } }) => css`
-    margin: 0 auto;
-    width: 100%;
-    max-width: ${screen["2xl"]};
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    height: 100%;
-  `}
+export const RightSide = styled.div`
+  width: 50%;
 `;
