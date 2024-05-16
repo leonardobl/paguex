@@ -8,7 +8,7 @@ import { Theme } from "./global/theme";
 import { GlobalStyles } from "./global/globalStyles";
 import { Login } from "./components/Pages/Login";
 import { ProtectedRoute } from "./components/Atoms/ProtectedRoute";
-import { FogotPassword } from "./components/Pages/FogotPassword";
+import { ForgotPassword } from "./components/Pages/FogotPassword";
 import { General } from "./components/Pages/General";
 import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
 import { Tendencies } from "./components/Pages/Tendencies";
@@ -66,7 +66,7 @@ export function App() {
 
               <Route path="/recuperar-senha" element={<RecoveryPassword />} />
 
-              <Route path="/esqueci-senha" element={<FogotPassword />} />
+              <Route path="/esqueci-senha" element={<ForgotPassword />} />
             </Routes>
           </BrowserRouter>
         </ContextProvider>

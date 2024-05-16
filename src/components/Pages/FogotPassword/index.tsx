@@ -1,6 +1,6 @@
 import React from "react";
-import { FogotPasswordTemplate } from "../../Templates/FogotPasswordTemplate";
+import { ForgotPasswordTemplate } from "../../Templates/ForgotPasswordTemplate";
 
-export const FogotPassword = () => {
-  return <FogotPasswordTemplate />;
+export const ForgotPassword = () => {
+  return <ForgotPasswordTemplate />;
 };
