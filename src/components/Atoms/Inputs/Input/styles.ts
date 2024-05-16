@@ -19,8 +19,8 @@ export const Container = styled.div`
       right: 14px;
       top: 50%;
       transform: translateY(-50%);
-      filter: brightness(0) saturate(100%) invert(20%) sepia(8%) saturate(92%)
-        hue-rotate(21deg) brightness(96%) contrast(88%);
+      filter: brightness(0) saturate(100%) invert(39%) sepia(34%)
+        saturate(5624%) hue-rotate(353deg) brightness(95%) contrast(92%);
     }
   `}
 `;
