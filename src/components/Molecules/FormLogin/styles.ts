@@ -48,7 +48,7 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   color: #1d1d1b;
-  font-size: 1rem;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.25rem;

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import * as S from "./styles";
-import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
+import {
+  IoEyeOffOutline,
+  IoEyeOffSharp,
+  IoEyeOutline,
+  IoEyeSharp,
+} from "react-icons/io5";
 
 interface InputCustomProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -34,9 +39,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         />
         {props.type === "password" ? (
           eyeOpen ? (
-            <IoEyeSharp onClick={handleTypeChange} />
+            <IoEyeOutline onClick={handleTypeChange} />
           ) : (
-            <IoEyeOffSharp onClick={handleTypeChange} />
+            <IoEyeOffOutline onClick={handleTypeChange} />
           )
         ) : null}
       </S.Container>

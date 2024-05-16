@@ -57,7 +57,7 @@ export const Input = styled.input<{ $typeInput?: string }>`
     background: #fff;
 
     padding: ${$typeInput === "password" ? "0 40px 0 20px" : "0 20px"};
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Noto Sans";
     font-weight: 400;
     color: ${(props) => props.theme.colors["gray-300"]};
