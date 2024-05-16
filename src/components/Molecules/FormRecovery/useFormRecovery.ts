@@ -3,10 +3,19 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-const schema = z.object({
-  senha: z.string({ message: "campo obrigatorio" }),
-  confirmSenha: z.string({ message: "campo obrigatorio" }),
-});
+const schema = z
+  .object({
+    senha: z
+      .string({ message: "campo obrigatorio" })
+      .min(1, "campo obrigatorio"),
+    confirmSenha: z
+      .string({ message: "campo obrigatorio" })
+      .min(1, "campo obrigatorio"),
+  })
+  .refine(({ confirmSenha, senha }) => confirmSenha === senha, {
+    path: ["confirmSenha"],
+    message: "As senhas não coferem",
+  });
 
 export const useFormRecovery = () => {
   const {

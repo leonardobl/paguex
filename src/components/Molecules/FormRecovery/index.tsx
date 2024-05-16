@@ -12,15 +12,15 @@ export const FormRecovery = ({ onSubmitForm, ...rest }: IFormRecoveryProps) => {
   const { errors, handleSubmit, register } = useFormRecovery();
 
   return (
-    <S.Form onSubmit={handleSubmit(onSubmitForm)}>
+    <S.Form {...rest} onSubmit={handleSubmit(onSubmitForm)}>
       <div>
         <S.Label>Senha</S.Label>
-        <Input {...register} type="password" />
+        <Input {...register("senha")} type="password" />
         {errors?.senha && <MessageErro>{errors?.senha?.message}</MessageErro>}
       </div>
       <div>
         <S.Label>Confirmar Senha</S.Label>
-        <Input {...register} type="password" />
+        <Input {...register("confirmSenha")} type="password" />
         {errors?.confirmSenha && (
           <MessageErro>{errors?.confirmSenha?.message}</MessageErro>
         )}
