@@ -39,6 +39,7 @@ export const GeneralTemplate = () => {
           <InputDate
             required
             showIcon
+            maxDate={new Date()}
             selected={filterDate?.dataFim}
             placeholderText="___/___/___"
             onChange={(e) => setFilterDate((prev) => ({ ...prev, dataFim: e }))}
