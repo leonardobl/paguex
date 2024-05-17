@@ -149,16 +149,6 @@ export const Table = styled.div`
   margin-bottom: 2rem;
 
   > div {
-    border-radius: 0.25rem;
-    background: #f6f6f6;
-    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2);
-
-    width: 100%;
-    height: 3.5rem;
-    display: grid;
-    padding: 0 8px;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
-    align-items: center;
   }
 
   > div + div {
@@ -167,18 +157,41 @@ export const Table = styled.div`
 `;
 
 export const TableHead = styled.div`
+  background: #1d1d1b;
+
+  border-radius: 0.25rem;
+
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2);
+
+  width: 100%;
+  height: 3.5rem;
+  display: grid;
+  padding: 0 8px;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+  align-items: center;
+
   h4 {
-    color: #1d1d1b;
-    font-family: "Noto Sans";
+    color: #fff;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.5rem; /* 150% */
+    line-height: 1.5rem;
     letter-spacing: 0.03rem;
   }
 `;
 
 export const TableRow = styled.div`
+  border-radius: 0.25rem;
+  background: #f6f6f6;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.2);
+
+  width: 100%;
+  height: 3.5rem;
+  display: grid;
+  padding: 0 8px;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+  align-items: center;
+
   &:hover {
     background: ${darken(0.03, "#f6f6f6")};
   }
