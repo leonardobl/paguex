@@ -10,7 +10,14 @@ import { maskMoney } from "../../../utils/masks";
 import { reverseToBrDate } from "../../../utils/dateTransform";
 
 export const GeneralTemplate = () => {
-  const { filterDate, setFilterDate, handleFilter, dataGeral } = useHome();
+  const {
+    filterDate,
+    setFilterDate,
+    handleFilter,
+    dataGeral,
+    axisLinear,
+    dataLinear,
+  } = useHome();
 
   return (
     <LayoutTemplate title="Relatórios de Produção Geral">
@@ -105,22 +112,10 @@ export const GeneralTemplate = () => {
         </S.CardVistoria>
         <S.CardProducao>
           <S.TitleCard>PRODUÇÃO DIÁRIA TOTAL DE VISTORIAS</S.TitleCard>
+
           <LineChart
-            series={
-              dataGeral?.producaoDiaria?.map((item) => ({
-                label: item.empresa,
-                data: [item.producao[0].vistorias],
-              })) || []
-            }
-            xAxis={[
-              {
-                scaleType: "band",
-                data:
-                  dataGeral?.producaoDiaria?.map((item) =>
-                    item?.producao.map((data) => reverseToBrDate(data.data))
-                  ) || [],
-              },
-            ]}
+            series={dataLinear || []}
+            xAxis={[{ scaleType: "band", data: axisLinear || [] }]}
             slotProps={{
               legend: {
                 position: {
