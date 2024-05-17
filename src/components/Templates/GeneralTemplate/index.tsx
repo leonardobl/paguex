@@ -117,7 +117,7 @@ export const GeneralTemplate = () => {
                 scaleType: "band",
                 data:
                   dataGeral?.producaoDiaria?.map((item) =>
-                    reverseToBrDate(item?.producao[0]?.data)
+                    item?.producao.map((data) => reverseToBrDate(data.data))
                   ) || [],
               },
             ]}
