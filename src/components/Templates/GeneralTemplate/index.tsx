@@ -53,7 +53,7 @@ export const GeneralTemplate = () => {
         <S.ListCards>
           <S.Card>
             <p>Ticket Médio</p>
-            <span>{maskMoney(dataGeral?.ticketMedio) || "R$ 0,00"}</span>
+            <span>{maskMoney(dataGeral?.ticketMedio/100) || "R$ 0,00"}</span>
           </S.Card>
           <S.Card>
             <p>Revistorias</p>
