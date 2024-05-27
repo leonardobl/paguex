@@ -2,8 +2,13 @@ import React from "react";
 import * as S from "./styles";
 import { LayoutTemplate } from "../LayoutTemplate";
 import { SubTitle } from "../../Atoms/SubTitle";
+import { useDataColchaoAgendamentos } from "./useData";
 
 export const MattressTemplate = () => {
+  const {
+    dados,
+  } = useDataColchaoAgendamentos();
+
   return (
     <LayoutTemplate title="Colchão de Agendamentos">
       <S.Container>
@@ -15,22 +20,12 @@ export const MattressTemplate = () => {
         </p>
 
         <S.WrapperCards>
-          <S.Card>
-            <p>Starcheck</p>
-            <span>1320</span>
-          </S.Card>
-          <S.Card>
-            <p>LOG</p>
-            <span>250</span>
-          </S.Card>
-          <S.Card>
-            <p>Tokyo</p>
-            <span>45</span>
-          </S.Card>
-          <S.Card>
-            <p>Velox</p>
-            <span>789</span>
-          </S.Card>
+          {dados.map((empresa) => (
+            <S.Card>
+              <p>{empresa.empresa.toUpperCase()}</p>
+              <span>{empresa.relatorio.quantidadeTransferencia}</span>
+            </S.Card>
+          ))}
         </S.WrapperCards>
 
         <SubTitle>primeiro emplacamento</SubTitle>
@@ -41,22 +36,12 @@ export const MattressTemplate = () => {
         </p>
 
         <S.WrapperCards>
-          <S.Card>
-            <p>Starcheck</p>
-            <span>1320</span>
-          </S.Card>
-          <S.Card>
-            <p>LOG</p>
-            <span>250</span>
-          </S.Card>
-          <S.Card>
-            <p>Tokyo</p>
-            <span>45</span>
-          </S.Card>
-          <S.Card>
-            <p>Velox</p>
-            <span>789</span>
-          </S.Card>
+          {dados.map((empresa) => (
+            <S.Card>
+              <p>{empresa.empresa.toUpperCase()}</p>
+              <span>{empresa.relatorio.quantidadePrimeiroEmplacamento}</span>
+            </S.Card>
+          ))}
         </S.WrapperCards>
       </S.Container>
     </LayoutTemplate>

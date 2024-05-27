@@ -6,6 +6,8 @@ import {
   IGerenciamentoProducao,
   IGerenciamentoProps,
 } from "../../types/gerenciamento";
+import { ITendenciaDTO } from "../../types/tendencia";
+import { IColchaoAgendamentoDTO } from "../../types/colchaoAgendamento";
 
 const basePath = "/gerenciamento";
 
@@ -35,5 +37,13 @@ export class Gerenciamento {
     return ApiBrave.get(
       `${basePath}/producao?dataInicio=${dataInicio}&dataFim=${dataFim}`
     );
+  }
+
+  static async tendencia(): Promise<AxiosResponse<ITendenciaDTO[]>> {
+    return ApiBrave.get(`${basePath}/tendencia`);
+  }
+
+  static async colchaoDeAgendamentos(): Promise<AxiosResponse<IColchaoAgendamentoDTO[]>> {
+    return ApiBrave.get(`${basePath}/colchao-de-agendamentos`);
   }
 }
