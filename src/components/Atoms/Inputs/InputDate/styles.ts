@@ -95,7 +95,7 @@ export const Label = styled.label`
   display: flex;
 
   padding: 2px 5px;
-  font-family: "Open Sans";
+  font-family: "Noto Sans";
   color: rgba(0, 0, 0, 0.56);
 
   font-size: 12px;

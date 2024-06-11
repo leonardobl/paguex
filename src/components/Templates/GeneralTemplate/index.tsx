@@ -8,44 +8,75 @@ import { LineChart } from "@mui/x-charts";
 import { useHome } from "./useHome";
 import { maskMoney } from "../../../utils/masks";
 import { reverseToBrDate } from "../../../utils/dateTransform";
+import { SimpleSelect } from "../../Atoms/Selects/SimpleSelect";
+import { ISelectOptions } from "../../../types/inputs";
 
 export const GeneralTemplate = () => {
   const {
-    filterDate,
-    setFilterDate,
+    control,
+    handleSubmit,
+    register,
+    Controller,
     handleFilter,
     dataGeral,
     axisLinear,
     dataLinear,
+    CidadeOptions,
   } = useHome();
 
   return (
     <LayoutTemplate title="Relatórios de Produção Geral">
-      <S.FormDateFilter onSubmit={handleFilter}>
+      <S.FormDateFilter onSubmit={handleSubmit(handleFilter)}>
         <div>
           <S.Label>Data Inicial</S.Label>
-          <InputDate
-            required
-            showIcon
-            selected={filterDate?.dataIncio}
-            placeholderText="___/___/___"
-            onChange={(e) =>
-              setFilterDate((prev) => ({ ...prev, dataIncio: e }))
-            }
+          <Controller
+            control={control}
+            name="dataIncio"
+            render={({ field: { onChange, value } }) => (
+              <InputDate
+                required
+                showIcon
+                selected={value}
+                placeholderText="___/___/___"
+                onChange={onChange}
+              />
+            )}
           />
         </div>
         <div>
           <S.Label>Data Final</S.Label>
-          <InputDate
-            required
-            showIcon
-            maxDate={new Date()}
-            selected={filterDate?.dataFim}
-            placeholderText="___/___/___"
-            onChange={(e) => setFilterDate((prev) => ({ ...prev, dataFim: e }))}
+          <Controller
+            control={control}
+            name="dataFim"
+            render={({ field: { onChange, value } }) => (
+              <InputDate
+                required
+                showIcon
+                maxDate={new Date()}
+                selected={value}
+                placeholderText="___/___/___"
+                onChange={onChange}
+              />
+            )}
           />
         </div>
         <div>
+          <S.Label>Empresa</S.Label>
+          <Controller
+            control={control}
+            name="empresa"
+            render={({ field: { value, onChange } }) => (
+              <SimpleSelect
+                options={CidadeOptions}
+                isClearable
+                value={CidadeOptions.find((i) => i.value === value) || null}
+                onChange={(e: ISelectOptions) => onChange(e?.value)}
+              />
+            )}
+          />
+        </div>
+        <div>
+          <S.Label></S.Label>
           <Button>Filtrar</Button>
         </div>
       </S.FormDateFilter>
@@ -53,7 +84,7 @@ export const GeneralTemplate = () => {
         <S.ListCards>
           <S.Card>
             <p>Ticket Médio</p>
-            <span>{maskMoney(dataGeral?.ticketMedio/100) || "R$ 0,00"}</span>
+            <span>{maskMoney(dataGeral?.ticketMedio / 100) || "R$ 0,00"}</span>
           </S.Card>
           <S.Card>
             <p>Revistorias</p>

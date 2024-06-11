@@ -3,19 +3,35 @@ import styled, { css } from "styled-components";
 
 export const FormDateFilter = styled.form`
   display: grid;
-  grid-template-columns: repeat(3, 10rem);
+  grid-template-columns: 1fr 1fr 1.5fr 1fr;
   width: max-content;
   gap: 0 1rem;
   margin-bottom: 3rem;
+  grid-template-areas: "dataIni dataFim cidade button";
 
-  > div:has(> button) {
+  > :nth-child(1) {
+    grid-area: dataIni;
+    width: 170px;
+  }
+
+  > :nth-child(2) {
+    grid-area: dataFim;
+    width: 170px;
+  }
+
+  > :nth-child(3) {
+    grid-area: cidade;
+  }
+
+  > :nth-child(4) {
+    grid-area: button;
     display: flex;
     align-items: end;
   }
 `;
 
 export const Label = styled.label`
-  color: #8b9eb2;
+  color: #1d1d1b;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
