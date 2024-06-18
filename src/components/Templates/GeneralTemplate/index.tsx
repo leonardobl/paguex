@@ -125,6 +125,10 @@ export const GeneralTemplate = () => {
         <S.CardVistoria>
           <S.TitleCard>Vistorias (%)</S.TitleCard>
           <BarChart
+            margin={{
+              bottom: 70,
+            }}
+            height={340}
             xAxis={[{ scaleType: "band", data: ["Lojas", "Deliverys"] }]}
             slotProps={{
               legend: {
@@ -132,7 +136,7 @@ export const GeneralTemplate = () => {
                   vertical: "bottom",
                   horizontal: "right",
                 },
-                // padding: 0,
+
                 labelStyle: { fontSize: 12 },
                 itemMarkWidth: 10,
                 itemMarkHeight: 10,
@@ -154,6 +158,10 @@ export const GeneralTemplate = () => {
           <S.TitleCard>PRODUÇÃO DIÁRIA TOTAL DE VISTORIAS</S.TitleCard>
 
           <LineChart
+            height={340}
+            margin={{
+              bottom: 70,
+            }}
             series={dataLinear || []}
             xAxis={[{ scaleType: "band", data: axisLinear || [] }]}
             slotProps={{

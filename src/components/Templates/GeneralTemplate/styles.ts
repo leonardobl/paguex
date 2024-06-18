@@ -109,7 +109,7 @@ export const CardVistoria = styled.div`
   padding: 1rem;
   max-width: 31.9375rem;
   width: 100%;
-  height: 18.5rem;
+  height: 24rem;
   border-radius: 0.25rem;
 
   border-radius: 0.25rem;
@@ -120,7 +120,7 @@ export const CardProducao = styled.div`
   padding: 1rem;
   width: 100%;
   max-width: 47.125rem;
-  height: 18.5625rem;
+  height: 24rem;
 
   border-radius: 0.25rem;
   background: #f6f6f6;
