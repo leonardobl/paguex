@@ -87,6 +87,7 @@ export const useHome = () => {
       return {
         label: empresa.empresa,
         data: empresa.producao.map((producao) => producao.vistorias),
+        color: Colors[empresa?.empresa],
       };
     });
 
