@@ -22,6 +22,7 @@ export const GeneralTemplate = () => {
     axisLinear,
     dataLinear,
     CidadeOptions,
+    Colors,
   } = useHome();
 
   return (
@@ -143,6 +144,7 @@ export const GeneralTemplate = () => {
               dataGeral?.empresas?.map((item) => ({
                 data: [item.qtdLoja, item.qtdDelivery],
                 label: item?.empresa,
+                color: Colors[item?.empresa],
               })) || []
             }
             skipAnimation={true}
