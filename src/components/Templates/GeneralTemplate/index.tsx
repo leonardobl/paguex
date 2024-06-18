@@ -91,6 +91,22 @@ export const GeneralTemplate = () => {
             <span>{dataGeral?.revistorias | 0}</span>
           </S.Card>
           <S.Card>
+            <p>Delivery Veículos Leves</p>
+            <span>-183</span>
+          </S.Card>
+          <S.Card>
+            <p>Delivery Veículos Pesados</p>
+            <span>-65</span>
+          </S.Card>
+          <S.Card>
+            <p>Qtd. Primeiro Emplacamento</p>
+            <span>-400</span>
+          </S.Card>
+          <S.Card>
+            <p>Qtd. Transferência</p>
+            <span>-200</span>
+          </S.Card>
+          <S.Card>
             <p>Total Loja</p>
             <span>{dataGeral?.totalLoja | 0}</span>
           </S.Card>
@@ -101,16 +117,6 @@ export const GeneralTemplate = () => {
           <S.Card className="active">
             <p>Total Vistorias</p>
             <span>{dataGeral?.totalVistorias | 0}</span>
-          </S.Card>
-        </S.ListCards>
-        <S.ListCards>
-          <S.Card>
-            <p>Móvel Obrigatório</p>
-            <span>{dataGeral?.movelObrigatorio | 0}</span>
-          </S.Card>
-          <S.Card>
-            <p>Móvel Não Obri.</p>
-            <span>{dataGeral?.movelNaoObrigatorio | 0}</span>
           </S.Card>
         </S.ListCards>
       </S.WrapperListCards>

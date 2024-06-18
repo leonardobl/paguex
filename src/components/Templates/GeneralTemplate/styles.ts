@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 export const FormDateFilter = styled.form`
   display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr 1.2fr 1fr;
   width: max-content;
   gap: 0 1rem;
   margin-bottom: 3rem;
@@ -65,8 +65,8 @@ export const ListCards = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 10rem;
-  height: 6rem;
+  width: 8.63319rem;
+  height: 5.98838rem;
 
   border-radius: 0.25rem;
   background: #f6f6f6;
@@ -75,8 +75,8 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.85em 0.6rem;
 
   &.active {
     background: #1d1d1b;
@@ -89,7 +89,7 @@ export const Card = styled.div`
   > p {
     color: #e84e1b;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.25rem;
@@ -98,7 +98,7 @@ export const Card = styled.div`
   > span {
     color: #1d1d1b;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.25rem;
