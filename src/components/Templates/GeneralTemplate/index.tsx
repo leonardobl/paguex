@@ -185,9 +185,12 @@ export const GeneralTemplate = () => {
           <h4>%Loja</h4>
           <h4>Qtd. Móvel</h4>
           <h4>%Móvel</h4>
-          <h4>Revistorias </h4>
-          <h4>Móvel Obrigatório</h4>
-          <h4>Móvel Não Obrigatório</h4>
+          <h4>Delivery Veíc. leves</h4>
+          <h4>Delivery Veíc. Pesados</h4>
+
+          {/* <h4>Revistorias </h4> */}
+          {/* <h4>Móvel Obrigatório</h4> */}
+          {/* <h4>Móvel Não Obrigatório</h4> */}
           <h4>Total</h4>
         </S.TableHead>
         {dataGeral?.lojas?.map((item) => (
@@ -198,9 +201,11 @@ export const GeneralTemplate = () => {
             <p>{item?.perLoja || 0} %</p>
             <p>{item?.qtdMovel || 0}</p>
             <p>{item?.perMovel || 0} %</p>
-            <p>{item?.revistorias || 0}</p>
-            <p>{item.movelObrigatorio || 0}</p>
-            <p>{item.movelNaoObrigatorio || 0}</p>
+            <p>---</p>
+            <p>---</p>
+            {/* <p>{item?.revistorias || 0}</p> */}
+            {/* <p>{item.movelObrigatorio || 0}</p> */}
+            {/* <p>{item.movelNaoObrigatorio || 0}</p> */}
             <p>{item.total || 0}</p>
           </S.TableRow>
         ))}

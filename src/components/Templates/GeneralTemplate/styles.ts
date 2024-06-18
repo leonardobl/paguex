@@ -183,7 +183,7 @@ export const TableHead = styled.div`
   height: 3.5rem;
   display: grid;
   padding: 0 8px;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
   align-items: center;
 
   h4 {
@@ -205,7 +205,7 @@ export const TableRow = styled.div`
   height: 3.5rem;
   display: grid;
   padding: 0 8px;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
   align-items: center;
 
   &:hover {
