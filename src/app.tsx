@@ -12,8 +12,9 @@ import { ForgotPassword } from "./components/Pages/FogotPassword";
 import { General } from "./components/Pages/General";
 import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
 import { Tendencies } from "./components/Pages/Tendencies";
-import { Productivity } from "./components/Pages/Productivity";
+import { ProductivitySurveyor } from "./components/Pages/ProductivitySurveyor";
 import { Mattress } from "./components/Pages/Mattress";
+import { ProductivityService } from "./components/Pages/ProductivityService";
 
 export function App() {
   return (
@@ -54,10 +55,19 @@ export function App() {
               />
 
               <Route
-                path="/relatorio-produtividade"
+                path="/relatorio-produtividade-vistoriador"
                 element={
                   <ProtectedRoute>
-                    <Productivity />
+                    <ProductivitySurveyor />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/relatorio-produtividade-servico"
+                element={
+                  <ProtectedRoute>
+                    <ProductivityService />
                   </ProtectedRoute>
                 }
               />

@@ -47,7 +47,7 @@ export const LayoutTemplate = ({
               </NavLink>
             </S.MenuListItem>
             <S.MenuListItem>
-              <NavLink to={"/relatorio-produtividade"}>
+              <NavLink to={"/relatorio-produtividade-vistoriador"}>
                 <img src="/assets/svg/icon-graph2.svg" alt="icone grafico" />
               </NavLink>
             </S.MenuListItem>
@@ -55,6 +55,12 @@ export const LayoutTemplate = ({
             <S.MenuListItem>
               <NavLink to={"/relatorio-colchao"}>
                 <img src="/assets/svg/icon-graph3.svg" alt="icone grafico" />
+              </NavLink>
+            </S.MenuListItem>
+
+            <S.MenuListItem>
+              <NavLink to={"/relatorio-produtividade-servico"}>
+                <img src="/assets/svg/engrenagem.svg" alt="icone engrenagem" />
               </NavLink>
             </S.MenuListItem>
           </S.MenuList>
