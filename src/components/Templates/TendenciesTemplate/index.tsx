@@ -63,6 +63,57 @@ export const TendenciesTemplate = () => {
           />
         </S.Card>
       </S.Container>
+
+      <S.TableTitle>Desempenho em Relação a Meta</S.TableTitle>
+
+      <S.Table>
+        <S.TableHead>
+          <tr>
+            <td>Empresa</td>
+            <td>Meta</td>
+            <td>Realizado</td>
+            <td>Média/dia</td>
+            <td>Necessidade/dia</td>
+            <td>Projeção</td>
+          </tr>
+        </S.TableHead>
+        <S.TableBody>
+          <tr>
+            <td>Starcheck</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+          <tr>
+            <td>Log</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+
+          <tr>
+            <td>Tokyo</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+
+          <tr>
+            <td>VLX</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+        </S.TableBody>
+      </S.Table>
     </LayoutTemplate>
   );
 };
