@@ -5,7 +5,7 @@ import { FormFilterProductivityService } from "../../Molecules/FormFilterProduct
 export const ProductivityServiceTemplate = () => {
   return (
     <LayoutTemplate title="Relatório de Produção por Tipo de Serviço">
-      <FormFilterProductivityService />
+      <FormFilterProductivityService submitForm={(data) => console.log(data)} />
       <div>ProductivityServiceTemplate</div>
     </LayoutTemplate>
   );
