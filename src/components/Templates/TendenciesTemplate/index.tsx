@@ -6,11 +6,7 @@ import { LineChart } from "@mui/x-charts";
 import { useDataTendencia } from "./useData";
 
 export const TendenciesTemplate = () => {
-  const {
-    dadosQuantidades,
-    dadosValores,
-    axisLinear,
-  } = useDataTendencia();
+  const { dadosQuantidades, dadosValores, axisLinear } = useDataTendencia();
 
   return (
     <LayoutTemplate title="Dashboard de Tendência">
@@ -19,6 +15,10 @@ export const TendenciesTemplate = () => {
 
         <S.Card>
           <LineChart
+            margin={{
+              bottom: 70,
+            }}
+            height={340}
             xAxis={[{ scaleType: "band", data: axisLinear || [] }]}
             series={dadosQuantidades || []}
             slotProps={{
@@ -41,6 +41,10 @@ export const TendenciesTemplate = () => {
 
         <S.Card>
           <LineChart
+            margin={{
+              bottom: 70,
+            }}
+            height={340}
             xAxis={[{ scaleType: "band", data: axisLinear || [] }]}
             series={dadosValores || []}
             slotProps={{
