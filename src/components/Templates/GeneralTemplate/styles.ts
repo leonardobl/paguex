@@ -3,19 +3,35 @@ import styled, { css } from "styled-components";
 
 export const FormDateFilter = styled.form`
   display: grid;
-  grid-template-columns: repeat(3, 10rem);
+  grid-template-columns: 1fr 1fr 1.2fr 1fr;
   width: max-content;
   gap: 0 1rem;
   margin-bottom: 3rem;
+  grid-template-areas: "dataIni dataFim cidade button";
 
-  > div:has(> button) {
+  > :nth-child(1) {
+    grid-area: dataIni;
+    width: 170px;
+  }
+
+  > :nth-child(2) {
+    grid-area: dataFim;
+    width: 170px;
+  }
+
+  > :nth-child(3) {
+    grid-area: cidade;
+  }
+
+  > :nth-child(4) {
+    grid-area: button;
     display: flex;
     align-items: end;
   }
 `;
 
 export const Label = styled.label`
-  color: #8b9eb2;
+  color: #1d1d1b;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
@@ -49,8 +65,8 @@ export const ListCards = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 10rem;
-  height: 6rem;
+  width: 8.63319rem;
+  height: 5.98838rem;
 
   border-radius: 0.25rem;
   background: #f6f6f6;
@@ -59,8 +75,8 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.85em 0.6rem;
 
   &.active {
     background: #1d1d1b;
@@ -73,7 +89,7 @@ export const Card = styled.div`
   > p {
     color: #e84e1b;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.25rem;
@@ -82,7 +98,7 @@ export const Card = styled.div`
   > span {
     color: #1d1d1b;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.25rem;
@@ -93,7 +109,7 @@ export const CardVistoria = styled.div`
   padding: 1rem;
   max-width: 31.9375rem;
   width: 100%;
-  height: 18.5rem;
+  height: 24rem;
   border-radius: 0.25rem;
 
   border-radius: 0.25rem;
@@ -104,7 +120,7 @@ export const CardProducao = styled.div`
   padding: 1rem;
   width: 100%;
   max-width: 47.125rem;
-  height: 18.5625rem;
+  height: 24rem;
 
   border-radius: 0.25rem;
   background: #f6f6f6;
@@ -167,7 +183,7 @@ export const TableHead = styled.div`
   height: 3.5rem;
   display: grid;
   padding: 0 8px;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
   align-items: center;
 
   h4 {
@@ -189,7 +205,7 @@ export const TableRow = styled.div`
   height: 3.5rem;
   display: grid;
   padding: 0 8px;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 2fr 0.5fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
   align-items: center;
 
   &:hover {

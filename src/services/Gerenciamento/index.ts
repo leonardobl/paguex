@@ -8,16 +8,17 @@ import {
 } from "../../types/gerenciamento";
 import { ITendenciaDTO } from "../../types/tendencia";
 import { IColchaoAgendamentoDTO } from "../../types/colchaoAgendamento";
+import { removeEmpty } from "../../utils/removeEmpty";
+import objectToParams from "../../utils/objectToParams";
 
 const basePath = "/gerenciamento";
 
 export class Gerenciamento {
-  static async geral({
-    dataInicio,
-    dataFim,
-  }: IGerenciamentoProps): Promise<AxiosResponse<IGerenciamentoDTO>> {
+  static async geral(props: IGerenciamentoProps): Promise<AxiosResponse<IGerenciamentoDTO>> {
+    const values = removeEmpty(props)
+    const params = objectToParams(values)
     return ApiBrave.get(
-      `${basePath}/geral?dataInicio=${dataInicio}&dataFim=${dataFim}`
+     params ? `${basePath}/geral?${params}` : `${basePath}/geral` 
     );
   }
 
