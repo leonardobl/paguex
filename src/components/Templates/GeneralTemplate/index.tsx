@@ -7,7 +7,6 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import { LineChart } from "@mui/x-charts";
 import { useHome } from "./useHome";
 import { maskMoney } from "../../../utils/masks";
-import { reverseToBrDate } from "../../../utils/dateTransform";
 import { SimpleSelect } from "../../Atoms/Selects/SimpleSelect";
 import { ISelectOptions } from "../../../types/inputs";
 
@@ -15,7 +14,6 @@ export const GeneralTemplate = () => {
   const {
     control,
     handleSubmit,
-    register,
     Controller,
     handleFilter,
     dataGeral,
