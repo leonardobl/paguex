@@ -96,3 +96,14 @@ export interface IGerenciamentoProducaoServicoProps {
   loja?: string;
   empresa?: string;
 }
+
+export interface IProducaoTipoServicoDTO {
+  empresa: string;
+  loja: string;
+  qtdPrimeiroEmplacamentoLoja: number;
+  qtdPrimeiroEmplacamentoMovel: number;
+  qtdPrimeiroEmplacamentoTotal: number;
+  qtdTransferenciaLoja: number;
+  qtdTransferenciaMovel: number;
+  qtdTransferenciaTotal: number;
+}
