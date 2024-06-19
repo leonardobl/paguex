@@ -13,13 +13,14 @@ import { useContextSite } from "../../../context/Context";
 import { z } from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { GraphColors } from "../../../utils/graphCorlors";
 
-const Colors = {
-  Log: "#50D05D",
-  Starcheck: "#266BF0",
-  Tokyo: "#E42E30",
-  Velox: "#000000",
-};
+// // const Colors = {
+// //   Log: "#50D05D",
+// //   Starcheck: "#266BF0",
+// //   Tokyo: "#E42E30",
+// //   Velox: "#000000",
+// // };
 
 type FilterDateTypes = {
   dataIncio?: Date;
@@ -87,7 +88,7 @@ export const useHome = () => {
       return {
         label: empresa.empresa,
         data: empresa.producao.map((producao) => producao.vistorias),
-        color: Colors[empresa?.empresa],
+        color: GraphColors[empresa?.empresa],
       };
     });
 
@@ -142,6 +143,6 @@ export const useHome = () => {
     control,
     handleSubmit,
     CidadeOptions,
-    Colors,
+    GraphColors,
   };
 };
