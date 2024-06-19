@@ -2,6 +2,7 @@ import React from "react";
 import * as S from "./styles";
 import { InputDate } from "../../Atoms/Inputs/InputDate";
 import { SimpleSelect } from "../../Atoms/Selects/SimpleSelect";
+import { Button } from "../../Atoms/Button";
 
 export const FormFilterProductivityService = () => {
   return (
@@ -20,6 +21,10 @@ export const FormFilterProductivityService = () => {
 
       <div>
         <SimpleSelect placeholder="" />
+      </div>
+
+      <div>
+        <Button>Filtrar</Button>
       </div>
     </S.Form>
   );
