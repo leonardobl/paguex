@@ -14,6 +14,7 @@ import { RecoveryPassword } from "./components/Pages/RecoveryPassword";
 import { Tendencies } from "./components/Pages/Tendencies";
 import { Productivity } from "./components/Pages/Productivity";
 import { Mattress } from "./components/Pages/Mattress";
+import { Repayment } from "./components/Pages/Repayment";
 
 export function App() {
   return (
@@ -62,6 +63,14 @@ export function App() {
                 }
               />
 
+              <Route
+                path="/relatorio-reembolso"
+                element={
+                  <ProtectedRoute>
+                    <Repayment />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/login" element={<Login />} />
 
               <Route path="/recuperar-senha" element={<RecoveryPassword />} />
