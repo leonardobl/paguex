@@ -10,23 +10,67 @@ import {
 } from "../../../types/gerenciamento";
 import { toast } from "react-toastify";
 import { useContextSite } from "../../../context/Context";
+import { z } from "zod";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { GraphColors } from "../../../utils/graphCorlors";
+
+// // const Colors = {
+// //   Log: "#50D05D",
+// //   Starcheck: "#266BF0",
+// //   Tokyo: "#E42E30",
+// //   Velox: "#000000",
+// // };
 
 type FilterDateTypes = {
-  dataIncio: Date;
-  dataFim: Date;
+  dataIncio?: Date;
+  dataFim?: Date;
+  empresa?: string;
 };
+
+const schema = z.object({
+  dataIncio: z.date().nullable().optional(),
+  dataFim: z.date().nullable().optional(),
+  empresa: z.string().min(1).optional().or(z.literal("")),
+});
+
+const CidadeOptions = [
+  {
+    label: "Log",
+    value: "Log",
+  },
+  {
+    label: "Starcheck",
+    value: "Starcheck",
+  },
+  {
+    label: "Tokyo",
+    value: "Tokyo",
+  },
+  {
+    label: "Velox",
+    value: "Velox",
+  },
+];
 
 export const useHome = () => {
   const { setIsLoad } = useContextSite();
   const [dataLinear, setDataLinear] = useState([]);
   const [axisLinear, setAxisLinear] = useState([]);
-  const [filterDate, setFilterDate] = useState<FilterDateTypes>({
-    dataIncio: new Date(),
-    dataFim: new Date(),
-  } as FilterDateTypes);
+
   const [dataGeral, setDataGeral] = useState<IGerenciamentoDTO>(
     {} as IGerenciamentoDTO
   );
+
+  const { register, control, handleSubmit } = useForm<FilterDateTypes>({
+    defaultValues: {
+      dataFim: new Date(),
+      dataIncio: new Date(),
+      empresa: "",
+    },
+    mode: "all",
+    resolver: zodResolver(schema),
+  });
 
   async function getDataGeral(dates: IGerenciamentoProps) {
     const result = await Gerenciamento.geral(dates);
@@ -44,6 +88,7 @@ export const useHome = () => {
       return {
         label: empresa.empresa,
         data: empresa.producao.map((producao) => producao.vistorias),
+        color: GraphColors[empresa?.empresa],
       };
     });
 
@@ -53,14 +98,12 @@ export const useHome = () => {
     return { dates: dates.map(reverseToBrDate), series };
   };
 
-  function handleFilter(e?: React.SyntheticEvent) {
-    e?.preventDefault();
-
+  function handleFilter(data: FilterDateTypes) {
     setIsLoad(true);
 
     const FILTER = {
-      dataInicio: reverseToIsoDate(filterDate?.dataIncio?.toLocaleDateString()),
-      dataFim: reverseToIsoDate(filterDate?.dataFim?.toLocaleDateString()),
+      dataInicio: reverseToIsoDate(data?.dataIncio?.toLocaleDateString()),
+      dataFim: reverseToIsoDate(data?.dataFim?.toLocaleDateString()),
     };
 
     getDataGeral(FILTER)
@@ -81,15 +124,25 @@ export const useHome = () => {
   }
 
   useEffect(() => {
-    handleFilter();
+    const dataInicio = reverseToIsoDate(new Date()?.toLocaleDateString());
+    const dataFim = reverseToIsoDate(new Date()?.toLocaleDateString());
+
+    getDataGeral({
+      dataInicio,
+      dataFim,
+    });
   }, []);
 
   return {
-    filterDate,
-    setFilterDate,
     handleFilter,
     dataGeral,
     dataLinear,
     axisLinear,
+    register,
+    Controller,
+    control,
+    handleSubmit,
+    CidadeOptions,
+    GraphColors,
   };
 };

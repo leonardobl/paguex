@@ -10,7 +10,7 @@ export const Container = styled.div<{
     position: relative;
 
     input {
-      height: 42px;
+      /* height: 42px; */
     }
 
     .css-1u9des2-indicatorSeparator {

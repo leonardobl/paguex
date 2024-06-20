@@ -5,7 +5,7 @@ import { useProductivity } from "./useProductivity";
 import { SimpleSelect } from "../../Atoms/Selects/SimpleSelect";
 import { Button } from "../../Atoms/Button";
 
-export const ProductivityTemplate = () => {
+export const ProductivitySurveyorTemplate = () => {
   const { filterOpen, setFilterOpen } = useProductivity();
 
   return (

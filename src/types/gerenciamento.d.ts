@@ -39,6 +39,7 @@ export interface IGerenciamentoProducao {
 export interface IGerenciamentoProps {
   dataInicio: string;
   dataFim: string;
+  empresa?: string;
 }
 
 //  -- - --
@@ -49,6 +50,8 @@ export interface IGerenciamentoDTO {
   movelNaoObrigatorio: number;
   movelObrigatorio: number;
   producaoDiaria: IGerencimanetoDiarioDTO[];
+  qtdPrimeiroEmplacamento: number;
+  qtdTransferencia: number;
   revistorias: number;
   ticketMedio: number;
   totalLoja: number;
@@ -71,6 +74,8 @@ export interface IGerenciamentoLojaDTO {
   perMovel: number;
   qtdLoja: number;
   qtdMovel: number;
+  qtdPrimeiroEmplacamento: number;
+  qtdTransferencia: number;
   revistorias: number;
   total: number;
 }
@@ -83,4 +88,22 @@ export interface IGerencimanetoDiarioDTO {
 export interface IGerenciamentoDiarioRevistoriaDTO {
   data: string;
   vistorias: number;
+}
+
+export interface IGerenciamentoProducaoServicoProps {
+  dataInicio?: string;
+  dataFim?: string;
+  loja?: string;
+  empresa?: string;
+}
+
+export interface IProducaoTipoServicoDTO {
+  empresa: string;
+  loja: string;
+  qtdPrimeiroEmplacamentoLoja: number;
+  qtdPrimeiroEmplacamentoMovel: number;
+  qtdPrimeiroEmplacamentoTotal: number;
+  qtdTransferenciaLoja: number;
+  qtdTransferenciaMovel: number;
+  qtdTransferenciaTotal: number;
 }
