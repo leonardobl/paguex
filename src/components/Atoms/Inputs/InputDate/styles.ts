@@ -40,9 +40,10 @@ export const Container = styled.div<{ $showIcon?: boolean }>`
         color: ${(props) => props.theme.colors["gray-300"]};
         font-size: 21px;
         position: absolute;
-        font-weight: 900;
+        font-weight: 500;
         right: ${$showIcon ? "50px" : "10px"};
-        bottom: 20px;
+        top: 45%;
+        transform: translateY(-50%);
       }
     }
 
@@ -58,7 +59,7 @@ export const Container = styled.div<{ $showIcon?: boolean }>`
         padding: 0 30px;
         color: ${(props) => props.theme.colors["gray-300"]};
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
 
         &:focus {
           /* outline: 1px solid #12d1a7; */

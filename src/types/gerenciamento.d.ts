@@ -1,3 +1,5 @@
+import { TipoServicoReembolsoEnum } from "../enums/tipoServicoReembolso";
+
 export interface IGerenciamentoGeral {
   quantidade: number;
   quantidadeLoja: number;
@@ -106,4 +108,13 @@ export interface IProducaoTipoServicoDTO {
   qtdTransferenciaLoja: number;
   qtdTransferenciaMovel: number;
   qtdTransferenciaTotal: number;
+}
+
+export interface IReembolsoProps {
+  dataInicio?: string;
+  dataFim?: string;
+  empresa?: string;
+  loja?: string;
+  tipoAgendamento?: string;
+  tipoServico?: TipoServicoReembolsoEnum | string;
 }

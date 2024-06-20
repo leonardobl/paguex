@@ -7,7 +7,7 @@ export const RepaymentTemplate = () => {
   return (
     <LayoutTemplate title="Dashboard de Reembolsos">
       <S.Container>
-        <FormFilterRepayment />
+        <FormFilterRepayment submitForm={(e) => console.log(e)} />
       </S.Container>
     </LayoutTemplate>
   );
