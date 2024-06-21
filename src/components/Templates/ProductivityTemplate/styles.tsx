@@ -112,3 +112,7 @@ export const TableBody = styled.tbody`
     line-height: 1.25rem;
   }
 `;
+
+export const WrapperFilter = styled.div`
+  margin-bottom: 3rem;
+`;
