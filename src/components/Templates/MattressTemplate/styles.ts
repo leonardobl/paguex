@@ -60,3 +60,62 @@ export const Card = styled.div`
     line-height: 1.25rem;
   }
 `;
+
+export const WrapperFilter = styled.div`
+  margin-bottom: 3.63rem;
+`;
+
+export const Table = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+
+  &,
+  thead,
+  tbody,
+  td {
+    border: 0.5px solid #cbcbcb;
+  }
+
+  td {
+    padding: 1rem;
+  }
+`;
+
+export const THead = styled.thead`
+  background: #1d1d1b;
+  height: 3.625rem;
+
+  td {
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+  }
+
+  > tr:nth-child(2) {
+    td {
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+    }
+  }
+`;
+
+export const TBody = styled.tbody`
+  background: #f6f6f6;
+
+  tr {
+    height: 3.625rem;
+  }
+
+  td {
+    color: #a3a3a3;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+  }
+`;

@@ -11,7 +11,9 @@ export const MattressTemplate = () => {
   return (
     <LayoutTemplate title="Colchão de Agendamentos">
       <S.Container>
-        <FormFilterMattress />
+        <S.WrapperFilter>
+          <FormFilterMattress submitForm={(e) => console.log(e)} />
+        </S.WrapperFilter>
 
         <SubTitle>vistoria de transferência</SubTitle>
 
@@ -44,6 +46,52 @@ export const MattressTemplate = () => {
             </S.Card>
           ))}
         </S.WrapperCards>
+
+        <SubTitle>Tempo de espera para agendamento</SubTitle>
+
+        <S.Table>
+          <S.THead>
+            <tr>
+              <td rowSpan={2}>Empresa</td>
+              <td rowSpan={2}>Loja</td>
+              <td colSpan={2}>Espera</td>
+            </tr>
+            <tr>
+              <td>Loja</td>
+              <td>Móvel</td>
+            </tr>
+          </S.THead>
+
+          <S.TBody>
+            <tr>
+              <td>Starcheck</td>
+              <td>São Luís</td>
+              <td>D0</td>
+              <td>D0</td>
+            </tr>
+
+            <tr>
+              <td>Log</td>
+              <td>Timon</td>
+              <td>D+1</td>
+              <td>D+1</td>
+            </tr>
+
+            <tr>
+              <td>Tokyo</td>
+              <td>Chapadinha</td>
+              <td>D+2</td>
+              <td>D+2</td>
+            </tr>
+
+            <tr>
+              <td>VLX</td>
+              <td>Imperatriz</td>
+              <td>D+1</td>
+              <td>D+2</td>
+            </tr>
+          </S.TBody>
+        </S.Table>
       </S.Container>
     </LayoutTemplate>
   );
