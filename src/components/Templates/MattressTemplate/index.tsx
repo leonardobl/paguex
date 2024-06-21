@@ -3,15 +3,16 @@ import * as S from "./styles";
 import { LayoutTemplate } from "../LayoutTemplate";
 import { SubTitle } from "../../Atoms/SubTitle";
 import { useDataColchaoAgendamentos } from "./useData";
+import { FormFilterMattress } from "../../Molecules/FormFilterMattress";
 
 export const MattressTemplate = () => {
-  const {
-    dados,
-  } = useDataColchaoAgendamentos();
+  const { dados } = useDataColchaoAgendamentos();
 
   return (
     <LayoutTemplate title="Colchão de Agendamentos">
       <S.Container>
+        <FormFilterMattress />
+
         <SubTitle>vistoria de transferência</SubTitle>
 
         <p>
