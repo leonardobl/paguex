@@ -6,7 +6,7 @@ import { LineChart } from "@mui/x-charts";
 import { useDataTendencia } from "./useData";
 
 export const TendenciesTemplate = () => {
-  const { dadosQuantidades, dadosValores, axisLinear } = useDataTendencia();
+  const { dadosQuantidades, dadosValores, axisLinear, desempenhos } = useDataTendencia();
 
   return (
     <LayoutTemplate title="Dashboard de Tendência">
@@ -78,40 +78,16 @@ export const TendenciesTemplate = () => {
           </tr>
         </S.TableHead>
         <S.TableBody>
-          <tr>
-            <td>Starcheck</td>
-            <td>2000</td>
-            <td>3000</td>
-            <td>100</td>
-            <td>4000</td>
-            <td>4000</td>
-          </tr>
-          <tr>
-            <td>Log</td>
-            <td>2000</td>
-            <td>3000</td>
-            <td>100</td>
-            <td>4000</td>
-            <td>4000</td>
-          </tr>
-
-          <tr>
-            <td>Tokyo</td>
-            <td>2000</td>
-            <td>3000</td>
-            <td>100</td>
-            <td>4000</td>
-            <td>4000</td>
-          </tr>
-
-          <tr>
-            <td>VLX</td>
-            <td>2000</td>
-            <td>3000</td>
-            <td>100</td>
-            <td>4000</td>
-            <td>4000</td>
-          </tr>
+          {desempenhos?.map((empresa) => (
+            <tr key={Math.random()}>
+              <td>{empresa?.empresa}</td>
+              <td>{empresa?.meta}</td>
+              <td>{empresa?.qtdTotal}</td>
+              <td>{empresa?.qtdMedia}</td>
+              <td>{empresa?.qtdMediaNecessaria}</td>
+              <td>{empresa?.qtdMediaProjecao}</td>
+            </tr>
+          ))}
         </S.TableBody>
       </S.Table>
     </LayoutTemplate>

@@ -4,12 +4,14 @@ import { Gerenciamento } from "../../../services/Gerenciamento";
 import { reverseToBrDate } from "../../../utils/dateTransform";
 import { toast } from "react-toastify";
 import { GraphColors } from "../../../utils/graphCorlors";
+import { ITendenciaDesempenhoDTO } from "../../../types/tendencia";
 
 export const useDataTendencia = () => {
   const { setIsLoad } = useContextSite();
   const [dadosQuantidades, setDadosQuantidades] = useState([]);
   const [dadosValores, setDadosValores] = useState([]);
   const [axisLinear, setAxisLinear] = useState([]);
+  const [desempenhos, setDesempenhos] = useState<ITendenciaDesempenhoDTO[]>([]);
 
   useEffect(() => {
     setIsLoad(true);
@@ -38,9 +40,26 @@ export const useDataTendencia = () => {
           };
         });
 
+        const seriesDesempenhoEmpresas = data.map((empresa) => {
+          return {
+            ...empresa,
+            empresa: empresa?.empresa,
+            meta: empresa?.meta ? empresa?.meta : 0,
+            qtdTotal: empresa?.qtdTotal,
+            valorTotal: empresa?.valorTotal,
+            qtdMedia: empresa?.qtdMedia,
+            valorMedio: empresa?.valorMedio,
+            qtdMediaProjecao: empresa?.qtdMediaProjecao,
+            valorMedioProjecao: empresa?.valorMedioProjecao,
+            qtdMediaNecessaria: empresa?.qtdMediaNecessaria,
+            valorMedioNecessario: empresa?.valorMedioNecessario,
+          };
+        });
+
         setAxisLinear(dates.map(reverseToBrDate));
         setDadosQuantidades(seriesQuantidades);
         setDadosValores(seriesValores);
+        setDesempenhos(seriesDesempenhoEmpresas);
       })
       .catch(
         ({
@@ -58,5 +77,6 @@ export const useDataTendencia = () => {
     dadosQuantidades,
     dadosValores,
     axisLinear,
+    desempenhos,
   };
 };

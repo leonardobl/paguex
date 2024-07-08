@@ -91,19 +91,19 @@ export const GeneralTemplate = () => {
           </S.Card>
           <S.Card>
             <p>Delivery Veículos Leves</p>
-            <span>-183</span>
+            <span>{dataGeral?.movelNaoObrigatorio | 0}</span>
           </S.Card>
           <S.Card>
             <p>Delivery Veículos Pesados</p>
-            <span>-65</span>
+            <span>{dataGeral?.movelObrigatorio | 0}</span>
           </S.Card>
           <S.Card>
             <p>Qtd. Primeiro Emplacamento</p>
-            <span>-400</span>
+            <span>{dataGeral?.qtdPrimeiroEmplacamento | 0}</span>
           </S.Card>
           <S.Card>
             <p>Qtd. Transferência</p>
-            <span>-200</span>
+            <span>{dataGeral?.qtdTransferencia | 0}</span>
           </S.Card>
           <S.Card>
             <p>Total Loja</p>
@@ -207,11 +207,9 @@ export const GeneralTemplate = () => {
             <p>{item?.perLoja || 0} %</p>
             <p>{item?.qtdMovel || 0}</p>
             <p>{item?.perMovel || 0} %</p>
-            <p>---</p>
-            <p>---</p>
             {/* <p>{item?.revistorias || 0}</p> */}
-            {/* <p>{item.movelObrigatorio || 0}</p> */}
-            {/* <p>{item.movelNaoObrigatorio || 0}</p> */}
+            <p>{item.movelObrigatorio || 0}</p>
+            <p>{item.movelNaoObrigatorio || 0}</p>
             <p>{item.total || 0}</p>
           </S.TableRow>
         ))}
