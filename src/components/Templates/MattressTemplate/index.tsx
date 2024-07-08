@@ -26,7 +26,7 @@ export const MattressTemplate = () => {
           {dados.map((empresa) => (
             <S.Card>
               <p>{empresa.empresa.toUpperCase()}</p>
-              <span>{empresa.relatorio.quantidadeTransferencia}</span>
+              <span>{empresa?.quantidadeTransferenciaTotal}</span>
             </S.Card>
           ))}
         </S.WrapperCards>
@@ -39,10 +39,10 @@ export const MattressTemplate = () => {
         </p>
 
         <S.WrapperCards>
-          {dados.map((empresa) => (
+          {dados?.map((empresa) => (
             <S.Card>
               <p>{empresa.empresa.toUpperCase()}</p>
-              <span>{empresa.relatorio.quantidadePrimeiroEmplacamento}</span>
+              <span>{empresa?.quantidadePrimeiroEmplacamentoTotal}</span>
             </S.Card>
           ))}
         </S.WrapperCards>
@@ -63,33 +63,16 @@ export const MattressTemplate = () => {
           </S.THead>
 
           <S.TBody>
-            <tr>
-              <td>Starcheck</td>
-              <td>São Luís</td>
-              <td>D0</td>
-              <td>D0</td>
-            </tr>
-
-            <tr>
-              <td>Log</td>
-              <td>Timon</td>
-              <td>D+1</td>
-              <td>D+1</td>
-            </tr>
-
-            <tr>
-              <td>Tokyo</td>
-              <td>Chapadinha</td>
-              <td>D+2</td>
-              <td>D+2</td>
-            </tr>
-
-            <tr>
-              <td>VLX</td>
-              <td>Imperatriz</td>
-              <td>D+1</td>
-              <td>D+2</td>
-            </tr>
+            {dados?.map((empresa) => (
+              empresa?.relatorio?.map((loja) => (
+                <tr>
+                  <td>{empresa?.empresa}</td>
+                  <td>{loja?.nome}</td>
+                  <td>{loja?.ultimaEsperaLoja !== null ? loja?.ultimaEsperaLoja === 0 ? `D${loja?.ultimaEsperaLoja}` : `D+${loja?.ultimaEsperaLoja}` : ''}</td>
+                  <td>{loja?.ultimaEsperaDelivery !== null ? loja?.ultimaEsperaDelivery === 0 ? `D${loja?.ultimaEsperaDelivery}` : `D+${loja?.ultimaEsperaDelivery}` : ''}</td>
+                </tr>
+              ))
+            ))}
           </S.TBody>
         </S.Table>
       </S.Container>
