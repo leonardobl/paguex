@@ -6,11 +6,7 @@ import { LineChart } from "@mui/x-charts";
 import { useDataTendencia } from "./useData";
 
 export const TendenciesTemplate = () => {
-  const {
-    dadosQuantidades,
-    dadosValores,
-    axisLinear,
-  } = useDataTendencia();
+  const { dadosQuantidades, dadosValores, axisLinear } = useDataTendencia();
 
   return (
     <LayoutTemplate title="Dashboard de Tendência">
@@ -19,6 +15,10 @@ export const TendenciesTemplate = () => {
 
         <S.Card>
           <LineChart
+            margin={{
+              bottom: 70,
+            }}
+            height={340}
             xAxis={[{ scaleType: "band", data: axisLinear || [] }]}
             series={dadosQuantidades || []}
             slotProps={{
@@ -41,6 +41,10 @@ export const TendenciesTemplate = () => {
 
         <S.Card>
           <LineChart
+            margin={{
+              bottom: 70,
+            }}
+            height={340}
             xAxis={[{ scaleType: "band", data: axisLinear || [] }]}
             series={dadosValores || []}
             slotProps={{
@@ -59,6 +63,57 @@ export const TendenciesTemplate = () => {
           />
         </S.Card>
       </S.Container>
+
+      <S.TableTitle>Desempenho em Relação a Meta</S.TableTitle>
+
+      <S.Table>
+        <S.TableHead>
+          <tr>
+            <td>Empresa</td>
+            <td>Meta</td>
+            <td>Realizado</td>
+            <td>Média/dia</td>
+            <td>Necessidade/dia</td>
+            <td>Projeção</td>
+          </tr>
+        </S.TableHead>
+        <S.TableBody>
+          <tr>
+            <td>Starcheck</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+          <tr>
+            <td>Log</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+
+          <tr>
+            <td>Tokyo</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+
+          <tr>
+            <td>VLX</td>
+            <td>2000</td>
+            <td>3000</td>
+            <td>100</td>
+            <td>4000</td>
+            <td>4000</td>
+          </tr>
+        </S.TableBody>
+      </S.Table>
     </LayoutTemplate>
   );
 };
