@@ -124,3 +124,7 @@ export interface IColchaoAgendamentoProps {
   tipoAtendimento?: string;
   tipoServico?: string;
 }
+export interface IProductivitySurveyorProps {
+  loja?: string;
+  empresa?: string;
+}

@@ -2,8 +2,7 @@ import React from "react";
 import { LayoutTemplate } from "../LayoutTemplate";
 import * as S from "./styles";
 import { useProductivity } from "./useProductivity";
-import { SimpleSelect } from "../../Atoms/Selects/SimpleSelect";
-import { Button } from "../../Atoms/Button";
+import { FormFilterProductivitySurveyor } from "../../Molecules/FormProductivitySurveyor";
 
 export const ProductivitySurveyorTemplate = () => {
   const { filterOpen, setFilterOpen } = useProductivity();
@@ -11,30 +10,9 @@ export const ProductivitySurveyorTemplate = () => {
   return (
     <LayoutTemplate title="Relatório de Produtividade por Vistoriador">
       <S.Container>
-        <S.ButtonFilter
-          data-active={filterOpen}
-          onClick={() => setFilterOpen((prev) => !prev)}
-        >
-          <img src="/assets/svg/icon-filter.svg" alt="icone filtro" />
-          Filtro
-        </S.ButtonFilter>
-        {filterOpen && (
-          <S.Filter>
-            <div>
-              <S.Label>Empresa</S.Label>
-              <SimpleSelect />
-            </div>
-
-            <div>
-              <S.Label>Loja</S.Label>
-              <SimpleSelect />
-            </div>
-
-            <div>
-              <Button>Buscar</Button>
-            </div>
-          </S.Filter>
-        )}
+        <S.WrapperFilter>
+          <FormFilterProductivitySurveyor submitForm={(e) => console.log(e)} />
+        </S.WrapperFilter>
 
         <S.Table>
           <S.TableHead>
