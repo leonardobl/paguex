@@ -118,3 +118,9 @@ export interface IReembolsoProps {
   tipoAgendamento?: string;
   tipoServico?: TipoServicoReembolsoEnum | string;
 }
+export interface IColchaoAgendamentoProps {
+  empresa?: string;
+  loja?: string;
+  tipoAtendimento?: string;
+  tipoServico?: string;
+}
