@@ -111,6 +111,13 @@ export interface IProducaoTipoServicoDTO {
   qtdTransferenciaTotal: number;
 }
 
+export interface IProducaoTipoServicoProps {
+  dataInicio?: string;
+  dataFim?: string;
+  empresa?: string;
+  loja?: string;
+}
+
 export interface IReembolsoProps {
   dataInicio?: string;
   dataFim?: string;
