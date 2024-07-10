@@ -130,6 +130,19 @@ export const useHome = () => {
     getDataGeral({
       dataInicio,
       dataFim,
+    }).then(({ data }) => {
+      formatLineChartData(data.producaoDiaria);
+      setDataGeral(data);
+    })
+    .catch(
+      ({
+        response: {
+          data: { mensagem },
+        },
+      }) => toast.error(mensagem)
+    )
+    .finally(() => {
+      setIsLoad(false);
     });
   }, []);
 

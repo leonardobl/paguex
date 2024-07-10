@@ -1,3 +1,4 @@
+import { TipoAtendimentoEnum } from "../enums/tipoAtendimento";
 import { TipoServicoReembolsoEnum } from "../enums/tipoServicoReembolso";
 
 export interface IGerenciamentoGeral {
@@ -115,7 +116,7 @@ export interface IReembolsoProps {
   dataFim?: string;
   empresa?: string;
   loja?: string;
-  tipoAgendamento?: string;
+  tipoAgendamento?: TipoAtendimentoEnum | string;
   tipoServico?: TipoServicoReembolsoEnum | string;
 }
 export interface IColchaoAgendamentoProps {

@@ -7,15 +7,27 @@ import {
   IGerenciamentoProducaoServicoProps,
   IGerenciamentoProps,
   IProducaoTipoServicoDTO,
+  IReembolsoProps,
 } from "../../types/gerenciamento";
 import { ITendenciaDTO } from "../../types/tendencia";
 import { IColchaoAgendamentoDTO } from "../../types/colchaoAgendamento";
 import { removeEmpty } from "../../utils/removeEmpty";
 import objectToParams from "../../utils/objectToParams";
+import { IReembolsoDTO } from "../../types/reembolso";
 
 const basePath = "/gerenciamento";
 
 export class Gerenciamento {
+  static async reembolso(
+    props: IReembolsoProps
+  ): Promise<AxiosResponse<IReembolsoDTO[]>> {
+    const values = removeEmpty(props);
+    const params = objectToParams(values);
+    return ApiBrave.get(
+      params ? `${basePath}/reembolso?${params}` : `${basePath}/reembolso`
+    );
+  }
+
   static async geral(
     props: IGerenciamentoProps
   ): Promise<AxiosResponse<IGerenciamentoDTO>> {
