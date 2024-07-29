@@ -133,6 +133,26 @@ export interface IColchaoAgendamentoProps {
   tipoServico?: string;
 }
 export interface IProductivitySurveyorProps {
+  dataInicio?: string;
+  dataFim?: string;
   loja?: string;
   empresa?: string;
+}
+
+export interface IProdutividadeDTO {
+  empresa: string;
+  vistoriadores: IProdutividadeVistoriadorDTO[];
+}
+
+export interface IProdutividadeVistoriadorDTO {
+  nome: string;
+  loja?: string;
+  qtdAgendamentoEmplacamento?: number;
+  tempoAgendamentoEmplacamento?: number;
+  qtdAgendamentoTransferencia?: number;
+  tempoAgendamentoTransferencia?: number;
+  qtdAgendamentoEmplacamentoDelivery?: number;
+  tempoAgendamentoEmplacamentoDelivery?: number;
+  qtdAgendamentoTransferenciaDelivery?: number;
+  tempoAgendamentoTransferenciaDelivery?: number;
 }

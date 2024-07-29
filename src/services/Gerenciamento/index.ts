@@ -7,6 +7,8 @@ import {
   IGerenciamentoProducaoServicoProps,
   IGerenciamentoProps,
   IProducaoTipoServicoDTO,
+  IProductivitySurveyorProps,
+  IProdutividadeDTO,
   IReembolsoProps,
 } from "../../types/gerenciamento";
 import { ITendenciaDTO } from "../../types/tendencia";
@@ -77,4 +79,13 @@ export class Gerenciamento {
   > {
     return ApiBrave.get(`${basePath}/colchao-de-agendamentos`);
   }
+
+  static async produtividade(props: IProductivitySurveyorProps): Promise<AxiosResponse<IProdutividadeDTO[]>> {
+  const values = removeEmpty(props);
+    const params = objectToParams(values);
+    return ApiBrave.get(
+      params ? `${basePath}/produtividade?${params}` : `${basePath}/produtividade`
+    );
+  } 
+
 }
