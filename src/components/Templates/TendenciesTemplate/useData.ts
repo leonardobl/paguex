@@ -37,6 +37,7 @@ export const useDataTendencia = () => {
               (producao) => producao.valorTotal / 100
             ),
             color: GraphColors[empresa.empresa],
+            valueFormatter: (value) => `R$ ${value}`,
           };
         });
 
