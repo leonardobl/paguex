@@ -5,6 +5,7 @@ import { reverseToBrDate } from "../../../utils/dateTransform";
 import { toast } from "react-toastify";
 import { GraphColors } from "../../../utils/graphCorlors";
 import { ITendenciaDesempenhoDTO } from "../../../types/tendencia";
+import { maskMoney } from "../../../utils/masks";
 
 export const useDataTendencia = () => {
   const { setIsLoad } = useContextSite();
@@ -37,7 +38,7 @@ export const useDataTendencia = () => {
               (producao) => producao.valorTotal / 100
             ),
             color: GraphColors[empresa.empresa],
-            valueFormatter: (value) => `R$ ${value}`,
+            valueFormatter: (value: number) => `${maskMoney(value)}`,
           };
         });
 
