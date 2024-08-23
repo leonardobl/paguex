@@ -147,6 +147,7 @@ export const GeneralTemplate = () => {
                 data: [item.qtdLoja, item.qtdDelivery],
                 label: item?.empresa,
                 color: GraphColors[item?.empresa],
+                valueFormatter: (value) => `${value} %`,
               })) || []
             }
             skipAnimation={true}
