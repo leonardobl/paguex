@@ -208,8 +208,8 @@ export const GeneralTemplate = () => {
             <p>{item?.qtdMovel || 0}</p>
             <p>{item?.perMovel || 0} %</p>
             {/* <p>{item?.revistorias || 0}</p> */}
-            <p>{item.movelObrigatorio || 0}</p>
             <p>{item.movelNaoObrigatorio || 0}</p>
+            <p>{item.movelObrigatorio || 0}</p>
             <p>{item.total || 0}</p>
           </S.TableRow>
         ))}
