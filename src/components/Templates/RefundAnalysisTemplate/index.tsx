@@ -6,7 +6,14 @@ export const RefundAnalysisTemplate = () => {
   return (
     <LayoutTemplate title="Reembolsos - Analítico">
       <S.Container>
-        <FormFilterRefundAnalysis submitForm={() => ""} />
+        <S.WrapperFilter>
+          <FormFilterRefundAnalysis submitForm={() => ""} />
+        </S.WrapperFilter>
+
+        <S.ButtonExport>
+          <img alt="icon download" src="/assets/svg/icon-export-down.svg" />{" "}
+          Exportar
+        </S.ButtonExport>
       </S.Container>
     </LayoutTemplate>
   );
