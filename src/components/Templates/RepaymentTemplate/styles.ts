@@ -65,7 +65,6 @@ export const Form = styled.form`
   > div:last-child {
     display: flex;
     align-items: end;
-    margin-bottom: 4px;
   }
 `;
 

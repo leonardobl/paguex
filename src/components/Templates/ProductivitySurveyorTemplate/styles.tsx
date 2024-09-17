@@ -133,9 +133,5 @@ export const Form = styled.form`
   > div:last-child {
     display: flex;
     align-items: end;
-
-    > button {
-      margin-bottom: 3px;
-    }
   }
 `;

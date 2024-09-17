@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainButton = styled.button`
   display: flex;
   width: 6rem;
-  height: 2.25rem;
+  height: 2.625rem;
   padding: 0.625rem 2.5625rem;
   justify-content: center;
   align-items: center;
