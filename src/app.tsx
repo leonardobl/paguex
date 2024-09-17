@@ -16,6 +16,7 @@ import { ProductivitySurveyor } from "./components/Pages/ProductivitySurveyor";
 import { Mattress } from "./components/Pages/Mattress";
 import { Repayment } from "./components/Pages/Repayment";
 import { ProductivityService } from "./components/Pages/ProductivityService";
+import { RefundAnalysis } from "./components/Pages/RefundAnalysis";
 
 export function App() {
   return (
@@ -78,6 +79,15 @@ export function App() {
                 element={
                   <ProtectedRoute>
                     <Repayment />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/relatorio-analitico-reembolso"
+                element={
+                  <ProtectedRoute>
+                    <RefundAnalysis />
                   </ProtectedRoute>
                 }
               />

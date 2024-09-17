@@ -72,6 +72,15 @@ export const LayoutTemplate = ({
                 <img src="/assets/svg/engrenagem.svg" alt="icone engrenagem" />
               </NavLink>
             </S.MenuListItem>
+
+            <S.MenuListItem>
+              <NavLink to={"/relatorio-analitico-reembolso"}>
+                <img
+                  src="/assets/svg/icon-analitico-reembolso.svg"
+                  alt="icone reembolso"
+                />
+              </NavLink>
+            </S.MenuListItem>
           </S.MenuList>
         </S.Nav>
       </S.Bar>
