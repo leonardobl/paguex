@@ -156,3 +156,7 @@ export interface IProdutividadeVistoriadorDTO {
   qtdAgendamentoTransferenciaDelivery?: number;
   tempoAgendamentoTransferenciaDelivery?: number;
 }
+
+export interface IListarLojasGetProps {
+  empresa?: string;
+}

@@ -1,13 +1,16 @@
 import { FormFilterRefundAnalysis } from "../../Molecules/FormFilterRefundAnalysis";
 import { LayoutTemplate } from "../LayoutTemplate";
 import * as S from "./styles";
+import { useRefundAnalysis } from "./useRefundAnalysis";
 
 export const RefundAnalysisTemplate = () => {
+  const { data, getReembolsos } = useRefundAnalysis();
+
   return (
     <LayoutTemplate title="Reembolsos - Analítico">
       <S.Container>
         <S.WrapperFilter>
-          <FormFilterRefundAnalysis submitForm={() => ""} />
+          <FormFilterRefundAnalysis submitForm={getReembolsos} />
         </S.WrapperFilter>
 
         <S.ButtonExport>
@@ -25,32 +28,17 @@ export const RefundAnalysisTemplate = () => {
             <h3>Valor</h3>
           </S.TableHeader>
 
-          <S.TableItem>
-            <p>StarCheck</p>
-            <p>São Luís</p>
-            <p>Loja</p>
-            <p>Transferência</p>
-            <p>xxxxxxxxxxxxxxxxxx</p>
-            <p>R$00,00</p>
-          </S.TableItem>
-
-          <S.TableItem>
-            <p>StarCheck</p>
-            <p>São Luís</p>
-            <p>Itinerante</p>
-            <p>1° Emplacamento</p>
-            <p>xxxxxxxxxxxxxxxxxx</p>
-            <p>R$00,00</p>
-          </S.TableItem>
-
-          <S.TableItem>
-            <p>StarCheck</p>
-            <p>Timon</p>
-            <p>Loja</p>
-            <p>Transferência</p>
-            <p>xxxxxxxxxxxxxxxxxx</p>
-            <p>R$00,00</p>
-          </S.TableItem>
+          {data.length > 0 &&
+            data.map((i) => (
+              <S.TableItem key={Math.random()}>
+                <p>{i?.empresa}</p>
+                <p>{i?.unidade}</p>
+                <p>{i?.tipoAtendimento}</p>
+                <p>{i?.tipoServico}</p>
+                <p>{i?.placa}</p>
+                <p>{i?.valor}</p>
+              </S.TableItem>
+            ))}
         </S.Table>
       </S.Container>
     </LayoutTemplate>

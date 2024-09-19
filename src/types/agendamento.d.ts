@@ -1,10 +1,13 @@
 import { StatusAgendamentoEnum } from "../enums/statusAgendamento";
+import { TipoAgendamentoEnum } from "../enums/tipoAgendameto";
 import { TipoAtendimentoEnum } from "../enums/tipoAtendimento";
 import { TipoClienteEnum } from "../enums/tipoCliente";
 import { TipoServicoEnum } from "../enums/tipoServico";
+import { TipoServicoReembolsoEnum } from "../enums/tipoServicoReembolso";
 import { tipoVeiculoEnum } from "../enums/tipoVeiculo";
 import { IPageableObject, ISortObject } from "./delivery";
 import { IFaturaDTO } from "./pagamento";
+import { IPageRequest } from "./page";
 
 export interface IAgendamentoDTO {
   cliente: IClienteDTO;
@@ -165,4 +168,38 @@ export interface IReagendamentoForm {
   uf?: string;
   uuidDelivery?: string;
   uuidLoja?: string;
+}
+
+export interface IReembolsoAnaliticoGetProps extends IPageRequest {
+  dataInicio: string;
+  dataFim: string;
+  empresa?: string;
+  loja?: string;
+  tipoAgendamento?: TipoAgendamentoEnum;
+  tipoServico?: TipoServicoReembolsoEnum;
+}
+
+//
+
+export interface IPageReembolsoAnaliticoDTO {
+  content: IReembolsoAnaliticoDTO[];
+  empty: boolean;
+  first: boolean;
+  last: boolean;
+  number: number;
+  numberOfElements: number;
+  pageable: IPageableObject;
+  size: number;
+  sort: ISortObject;
+  totalElements: number;
+  totalPages: number;
+}
+
+export interface IReembolsoAnaliticoDTO {
+  empresa: string;
+  placa: string;
+  tipoAtendimento: string;
+  tipoServico: string;
+  unidade: string;
+  valor: number;
 }
