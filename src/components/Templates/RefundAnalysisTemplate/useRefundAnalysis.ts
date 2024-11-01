@@ -27,6 +27,7 @@ export const useRefundAnalysis = () => {
     Gerenciamento.reembolsoAnalitico({
       dataInicio: date,
       dataFim: date,
+      size: 5,
       ...props,
     })
       .then(({ data }) => {
@@ -50,7 +51,7 @@ export const useRefundAnalysis = () => {
   }
 
   useEffect(() => {
-    getReembolsos(filters);
+    getReembolsos({ ...filters, page: numberPage });
   }, [numberPage]);
 
   return { data, getReembolsos, isMobile, setNumberPage, pagination };
