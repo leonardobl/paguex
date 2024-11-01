@@ -1,10 +1,12 @@
+import { Pagination } from "../../Atoms/Pagination";
 import { FormFilterRefundAnalysis } from "../../Molecules/FormFilterRefundAnalysis";
 import { LayoutTemplate } from "../LayoutTemplate";
 import * as S from "./styles";
 import { useRefundAnalysis } from "./useRefundAnalysis";
 
 export const RefundAnalysisTemplate = () => {
-  const { data, getReembolsos } = useRefundAnalysis();
+  const { data, getReembolsos, isMobile, pagination, setNumberPage } =
+    useRefundAnalysis();
 
   return (
     <LayoutTemplate title="Reembolsos - Analítico">
@@ -28,8 +30,8 @@ export const RefundAnalysisTemplate = () => {
             <h3>Valor</h3>
           </S.TableHeader>
 
-          {data.length > 0 &&
-            data.map((i) => (
+          {data?.length > 0 &&
+            data?.map((i) => (
               <S.TableItem key={Math.random()}>
                 <p>{i?.empresa}</p>
                 <p>{i?.unidade}</p>
@@ -39,6 +41,17 @@ export const RefundAnalysisTemplate = () => {
                 <p>{i?.valor}</p>
               </S.TableItem>
             ))}
+
+          {data?.length > 0 && (
+            <Pagination
+              maxPageNumbersDisplayed={isMobile ? 3 : 10}
+              key={`${Math.random()} - ${pagination}`}
+              totalPage={pagination.totalPage}
+              totalRegister={pagination.totalPage}
+              actualPage={pagination.actualPage}
+              setNumberPage={setNumberPage}
+            />
+          )}
         </S.Table>
       </S.Container>
     </LayoutTemplate>
